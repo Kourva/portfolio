@@ -1,0 +1,87 @@
+:root {
+    /* Color: pure OLED black canvas */
+    --color-bg: #000000;
+    --color-bg-elevated: #0a0a0a;
+    --color-bg-surface: #111111;
+    --color-bg-hover: #1a1a1a;
+
+    /* Text: grayscale hierarchy */
+    --color-text: #ffffff;
+    --color-text-secondary: #b3b3b3;
+    --color-text-muted: #666666;
+    --color-text-disabled: #3d3d3d;
+
+    /* Borders: subtle, hairline */
+    --color-border: #1f1f1f;
+    --color-border-strong: #333333;
+    --color-border-focus: #ffffff;
+
+    /* Accent: Nothing's signature red (use sparingly) */
+    --color-accent: #d71921;
+    --color-accent-soft: rgba(215, 25, 33, 0.15);
+
+    /* Status */
+    --color-success: #4ade80;
+    --color-warning: #fbbf24;
+    --color-danger: #ef4444;
+
+    /* Typography: font families */
+    --font-display: 'NType82', 'Space Grotesk', system-ui, sans-serif;
+    --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-mono: 'Lettera Mono', 'NType82 Mono', 'Space Mono', ui-monospace, monospace;
+    --font-dot: 'Ndot', 'Ndot 57', 'Ndot 77', monospace;
+
+    /* Type scale */
+    --fs-xs: 0.75rem;
+    --fs-sm: 0.875rem;
+    --fs-base: 1rem;
+    --fs-lg: 1.125rem;
+    --fs-xl: 1.25rem;
+    --fs-2xl: 1.5rem;
+    --fs-3xl: 2rem;
+    --fs-4xl: 2.5rem;
+    --fs-5xl: 3.5rem;
+
+    /* Letter spacing (Nothing uses tight display, wide mono) */
+    --ls-tight: -0.02em;
+    --ls-normal: 0;
+    --ls-wide: 0.05em;
+    --ls-wider: 0.15em;
+    --ls-widest: 0.3em;
+
+    /* Spacing scale (8px base) */
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-6: 1.5rem;
+    --space-8: 2rem;
+    --space-12: 3rem;
+    --space-16: 4rem;
+
+    /* Radius: Nothing is mostly sharp */
+    --radius-none: 0;
+    --radius-sm: 2px;
+    --radius-md: 4px;
+    --radius-lg: 8px;
+    --radius-full: 9999px;
+
+    /* Motion */
+    --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+    --duration-fast: 150ms;
+    --duration-base: 250ms;
+    --duration-slow: 400ms;
+
+    /* Layout */
+    --container-max: 1200px;
+    --header-height: 64px;
+    --sidebar-width: 260px;
+
+    /* Z-index scale */
+    --z-base: 1;
+    --z-dropdown: 100;
+    --z-sticky: 200;
+    --z-modal: 300;
+    --z-toast: 400;
+}

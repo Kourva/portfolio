@@ -1,0 +1,144 @@
+/* Display / Headlines: NType82 */
+.display {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: var(--fs-5xl);
+    letter-spacing: var(--ls-tight);
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+h1, .h1 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: var(--fs-4xl);
+    letter-spacing: var(--ls-tight);
+    line-height: 1.05;
+    text-transform: uppercase;
+}
+
+h2, .h2 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: var(--fs-3xl);
+    letter-spacing: var(--ls-tight);
+    line-height: 1.1;
+    text-transform: uppercase;
+}
+
+h3, .h3 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: var(--fs-2xl);
+    letter-spacing: var(--ls-normal);
+    line-height: 1.2;
+}
+
+h4, .h4 {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: var(--fs-xl);
+    letter-spacing: var(--ls-normal);
+    line-height: 1.3;
+}
+
+h5, .h5 {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: var(--fs-lg);
+    line-height: 1.4;
+}
+
+h6, .h6 {
+    font-family: var(--font-mono);
+    font-weight: 400;
+    font-size: var(--fs-sm);
+    letter-spacing: var(--ls-wider);
+    text-transform: uppercase;
+    color: var(--color-text-secondary);
+}
+
+/* Body text */
+p, .body {
+    font-family: var(--font-body);
+    font-size: var(--fs-base);
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+}
+
+.body-lg {
+    font-size: var(--fs-lg);
+    line-height: 1.5;
+}
+
+.body-sm {
+    font-size: var(--fs-sm);
+    line-height: 1.5;
+}
+
+/* Mono: technical labels, code, metadata */
+.mono {
+    font-family: var(--font-mono);
+    font-weight: 400;
+    font-size: var(--fs-sm);
+    letter-spacing: var(--ls-wide);
+}
+
+/* Overline: Nothing's signature label style */
+.overline {
+    font-family: var(--font-mono);
+    font-size: var(--fs-xs);
+    font-weight: 500;
+    letter-spacing: var(--ls-widest);
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+}
+
+/* Dot matrix: the iconic Ndot face */
+.dot-matrix {
+    font-family: var(--font-dot);
+    font-weight: 400;
+    letter-spacing: var(--ls-wide);
+    text-transform: uppercase;
+}
+
+.dot-matrix-caps {
+    font-family: var(--font-dot);
+    font-weight: 700;
+    letter-spacing: var(--ls-wide);
+    text-transform: uppercase;
+}
+
+/* Code */
+code, pre, kbd, samp {
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+}
+
+code {
+    background: var(--color-bg-surface);
+    padding: 0.15em 0.4em;
+    border-radius: var(--radius-sm);
+    color: var(--color-text);
+}
+
+pre {
+    background: var(--color-bg-elevated);
+    border: 1px solid var(--color-border);
+    padding: var(--space-4);
+    overflow-x: auto;
+    border-radius: var(--radius-md);
+}
+
+pre code {
+    background: none;
+    padding: 0;
+    color: var(--color-text-secondary);
+}
+
+/* Utility text colors */
+.text-primary { color: var(--color-text); }
+.text-secondary { color: var(--color-text-secondary); }
+.text-muted { color: var(--color-text-muted); }
+.text-accent { color: var(--color-accent); }

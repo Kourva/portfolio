@@ -1,0 +1,115 @@
+/* Fade in */
+@keyframes fade-in {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Fade up */
+@keyframes fade-up {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Fade down */
+@keyframes fade-down {
+    from { opacity: 0; transform: translateY(-8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Blink: cursor / dot-matrix pulse */
+@keyframes blink {
+    0%, 49%   { opacity: 1; }
+    50%, 100% { opacity: 0; }
+}
+
+/* Pulse: soft breathing */
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50%      { opacity: 0.4; }
+}
+
+/* Glyph cycle: Nothing's dot-matrix flicker */
+@keyframes glyph-cycle {
+    0%   { opacity: 0; }
+    4%   { opacity: 1; }
+    26%  { opacity: 0.08; }
+    100% { opacity: 0; }
+}
+
+/* Scanline: subtle CRT line */
+@keyframes scanline {
+    from { transform: translateY(-100%); }
+    to   { transform: translateY(100vh); }
+}
+
+/* Marquee: for ticker-style text */
+@keyframes marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+}
+
+/* Spin */
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.animate-fade-in {
+    animation: fade-in var(--duration-base) var(--ease-out) both;
+}
+
+.animate-fade-up {
+    animation: fade-up var(--duration-base) var(--ease-out) both;
+}
+
+.animate-fade-down {
+    animation: fade-down var(--duration-base) var(--ease-out) both;
+}
+
+.animate-blink {
+    animation: blink 1s steps(1) infinite;
+}
+
+.animate-pulse {
+    animation: pulse 2s var(--ease-in-out) infinite;
+}
+
+.animate-glyph {
+    animation: glyph-cycle 1.8s linear infinite both;
+}
+
+.animate-spin {
+    animation: spin 1s linear infinite;
+}
+
+/* Stagger delays */
+.delay-1 { animation-delay: 100ms; }
+.delay-2 { animation-delay: 200ms; }
+.delay-3 { animation-delay: 300ms; }
+.delay-4 { animation-delay: 400ms; }
+.delay-5 { animation-delay: 500ms; }
+
+.page-enter-active,
+.page-leave-active {
+    transition: opacity var(--duration-base) var(--ease-out),
+                transform var(--duration-base) var(--ease-out);
+}
+
+.page-enter-from {
+    opacity: 0;
+    transform: translateY(8px);
+}
+
+.page-leave-to {
+    opacity: 0;
+    transform: translateY(-8px);
+}
+
+.layout-enter-active,
+.layout-leave-active {
+    transition: opacity var(--duration-slow) var(--ease-out);
+}
+
+.layout-enter-from,
+.layout-leave-to {
+    opacity: 0;
+}

@@ -1,0 +1,165 @@
+/* NType82 — the headline/display face --- */
+@font-face {
+    font-family: 'NType82';
+    src: url('~/assets/fonts/nothing-tech/NType82-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'NType82';
+    src: url('~/assets/fonts/nothing-tech/NType82-Headline.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* NType82 Mono — monospaced terminal flavor --- */
+@font-face {
+    font-family: 'NType82 Mono';
+    src: url('~/assets/fonts/nothing-tech/NType82Mono-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Ndot — the iconic dot-matrix face --- */
+@font-face {
+    font-family: 'Ndot';
+    src: url('~/assets/fonts/nothing-tech/Ndot55-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Ndot';
+    src: url('~/assets/fonts/nothing-tech/Ndot55Caps-Regular.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Ndot 57';
+    src: url('~/assets/fonts/nothing-tech/Ndot57-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Ndot 57';
+    src: url('~/assets/fonts/nothing-tech/Ndot57Caps-Regular.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Ndot 77';
+    src: url('~/assets/fonts/nothing-tech/Ndot77JPExtended.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Lettera Mono LL — clean technical mono --- */
+@font-face {
+    font-family: 'Lettera Mono';
+    src: url('~/assets/fonts/nothing-tech/LetteraMonoLL-Light.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lettera Mono';
+    src: url('~/assets/fonts/nothing-tech/LetteraMonoLL-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lettera Mono';
+    src: url('~/assets/fonts/nothing-tech/LetteraMonoLL-Medium.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lettera Mono';
+    src: url('~/assets/fonts/nothing-tech/LetteraMonoLL-Italic.otf') format('opentype');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lettera Mono';
+    src: url('~/assets/fonts/nothing-tech/LetteraMonoLL-MediumItalic.otf') format('opentype');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lettera Mono';
+    src: url('~/assets/fonts/nothing-tech/LetteraMonoLL-LightItalic.otf') format('opentype');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Space Grotesk / Space Mono — UI fallbacks --- */
+@font-face {
+    font-family: 'Space Grotesk';
+    src: url('~/assets/fonts/nothing-tech/SpaceGrotesk-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Space Mono';
+    src: url('~/assets/fonts/nothing-tech/SpaceMono-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Inter — body/UI fallback */
+@font-face {
+    font-family: 'Inter';
+    src: url('~/assets/fonts/nothing-tech/Inter-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('~/assets/fonts/nothing-tech/Inter-Medium.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('~/assets/fonts/nothing-tech/Inter-Light.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter Variable';
+    src: url('~/assets/fonts/nothing-tech/InterVariable-Italic.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: italic;
+    font-display: swap;
+}
