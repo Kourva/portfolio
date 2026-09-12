@@ -72,7 +72,7 @@
                     <NTitle tag="span" variant="overline" color="muted">Process</NTitle>
                     <NTitle tag="h2" variant="dot" style="margin-top: 12px">How I Work</NTitle>
                     <NTitle tag="p" variant="body" color="secondary" style="margin-top: 8px">
-                        Seven main rules I follow on every project. Unless you don't want them!
+                        Eight main rules I follow on every project. Unless you don't want them!
                     </NTitle>
                 </NCard>
 
@@ -110,7 +110,7 @@
                 <NCard size="grow">
                     <NTitle tag="h4" variant="h4">Therapy Platform</NTitle>
                     <NTitle tag="p" variant="body" color="secondary" style="margin-top: 12px">
-                        A national multi-langual platform for psychology, psychiatry, and therapy
+                        A national platform for psychology, psychiatry, and therapy
                         services, built to serve kids, teens, adults, and couples
                         with different needs, schedules, and treatment styles.
                         Multi-language, in-person and online, at national and
@@ -151,7 +151,7 @@
                     <NCard size="thin" variant="dotted">
                         <NTitle tag="h3" variant="dot" style="margin-top: 12px">NIGC</NTitle>
                         <NTitle tag="p" variant="mono" color="muted" style="margin-top: 8px">
-                            Vue 3, CRM + PWA + Gazion
+                            Vue 3, CRM + PWA + Gaziom
                         </NTitle>
                         <div class="project-icon-slot">
                         </div>
@@ -270,8 +270,6 @@
                 </NCard>
 
                 <NBridge direction="v" />
-
-                <!-- Row 1: two cards -->
                 <NLayout direction="h">
                     <NCard size="third">
                         <NTitle tag="span" variant="mono" color="muted">IDEAS</NTitle>
@@ -293,8 +291,6 @@
                 </NLayout>
 
                 <NBridge direction="v" :offset="32" />
-
-                <!-- Row 2: two cards -->
                 <NLayout direction="h">
                     <NCard size="third">
                         <NTitle tag="span" variant="mono" color="muted">SEARCH</NTitle>
@@ -316,8 +312,6 @@
                 </NLayout>
 
                 <NBridge direction="v" />
-
-                <!-- Row 3: full-width card -->
                 <NCard size="wide" variant="dotted">
                     <NTitle tag="span" variant="mono" color="muted">FALLBACK</NTitle>
                     <NTitle tag="h4" variant="h4" style="margin-top: 8px">I Review, Not It</NTitle>
@@ -328,8 +322,6 @@
                 </NCard>
 
                 <NBridge direction="v" red />
-
-                <!-- Built with it -->
                 <NCard size="wide" variant="accent">
                     <NTitle tag="span" variant="overline" color="muted">Built With It</NTitle>
                     <NTitle tag="h4" variant="h4" style="margin-top: 8px">A Vue / Nuxt UI Kit</NTitle>
@@ -341,8 +333,6 @@
                 </NCard>
 
                 <NBridge direction="v" />
-
-                <!-- On agentic AI -->
                 <NCard size="wide">
                     <NTitle tag="span" variant="overline" color="muted">On Agentic AI</NTitle>
                     <NTitle tag="p" variant="body" color="secondary" style="margin-top: 12px">
@@ -363,7 +353,6 @@
                 </NCard>
 
                 <NBridge direction="v" />
-
                 <NLayout direction="h">
                     <NCard size="third" variant="dot-red">
                         <NTitle tag="span" variant="mono" color="muted">NOW</NTitle>
