@@ -31,9 +31,9 @@
 import DotMatrixHeader from '../feedback/DotMatrixHeader.vue'
 
 const links = [
-    { label: 'GitHub', href: 'https://github.com/k0urv4' },
+    { label: 'GitHub', href: 'https://github.com/kourva' },
     { label: 'Email', href: 'mailto:realkourva@proton.me' },
-    { label: 'Telegram', href: 'https://kourva.t.me' }
+    { label: 'Telegram', href: 'https://k0urv4.t.me' }
 ]
 </script>
 
@@ -137,22 +137,36 @@ const links = [
     }
 
     .nav-links {
-        gap: var(--space-4, 1rem);
+        gap: 5px;
+        flex-direction: column;
     }
 
     .nav-link {
         font-size: 0.65rem;
         letter-spacing: var(--ls-wide, 0.05em);
     }
+
+    .nav-link::after {
+        content: '';
+        position: absolute;
+        left: -10px;
+        top: 50%;
+        width: 3px;
+        height: 3px;
+        border-radius: 50%;
+        background: var(--color-accent);
+        transform: translateX(-50%) scale(0);
+        transition: transform var(--duration-fast) var(--ease-out);
+    }
+
+    .nav-link:hover::after {
+        transform: translateY(-50%) scale(1);
+    }
 }
 
 @media (max-width: 400px) {
     .brand-name {
         font-size: var(--fs-2xl, 1rem);
-    }
-
-    .nav-links {
-        gap: var(--space-3, 0.75rem);
     }
 
     .nav-link {

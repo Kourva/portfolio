@@ -95,6 +95,17 @@
                 </NLayout>
             </NLayout>
 
+            <NLayout direction="v">
+                <NTitle tag="h1" variant="dot" color="accent" style="margin-top: 12px">
+                    Things I've Built
+                </NTitle>
+                <NTitle tag="p" variant="body" color="secondary" style="margin-top: 12px">
+                    Real projects, not demos. Multi-app platforms, internal tools, and
+                    fullstack systems — some public, some behind closed doors. All of
+                    them built to run, not to showcase.
+                </NTitle>
+            </NLayout>
+
             <!-- Asayroom -->
             <NLayout direction="h">
                 <NCard size="thin" variant="dotted">
@@ -125,6 +136,16 @@
                         <li>In-app wallets and payment gateways</li>
                         <li>Meeting handling with case history forms</li>
                     </ul>
+                    
+                    <NButton
+                        style="margin-top: 12px"
+                        tag="a"
+                        href="https://asayroom.ir"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        label="Open Asayroom"
+                        variant="default"
+                    />
                 </NCard>
             </NLayout>
 
@@ -140,12 +161,34 @@
                             own visual identity rather than a shared template.
                         </NTitle>
                         <ul class="project-features">
-                            <li>Three independent apps, CRM, PWA, Gazion</li>
+                            <li>Three independent apps, CRM, PWA, Gaziom</li>
                             <li>Multi-theme support across all three</li>
                             <li>Unique design per app, no shared UI kit</li>
                             <li>Security-focused build for internal use</li>
                             <li>Modern, current-generation interfaces</li>
+                            <li>Rich animations across the interface</li>
+                            <li>Realtime photo taker for tasks</li>
+                            <li>AI suggestions for usage</li>
+                            <li>Built around gas thrift — how to use it properly</li>
                         </ul>
+                        <NButton
+                            style="margin-top: 12px"
+                            label="Open PWA App"
+                            tag="a"
+                            href="https://es.nigc-ar.ir/pwa2"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            variant="default"
+                        />
+                        <NButton
+                            style="margin-top: 12px"
+                            label="Open CRM App"
+                            tag="a"
+                            href="https://crm.nigc-ar.ir/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            variant="default"
+                        />
                     </NCard>
                     <NBridge :direction="dir" />
                     <NCard size="thin" variant="dotted">
@@ -154,6 +197,7 @@
                             Vue 3, CRM + PWA + Gaziom
                         </NTitle>
                         <div class="project-icon-slot">
+                            <NigcLogo/>
                         </div>
                     </NCard>
                 </NLayout>
@@ -179,6 +223,7 @@
                         Nuxt 3
                     </NTitle>
                     <div class="project-icon-slot">
+                        <CafeMahourLogo size="120" dot-color="#C5A981" bg-color="#129A42"/>
                     </div>
                 </NCard>
                 <NBridge :direction="dir" />
@@ -198,6 +243,12 @@
                         <li>Two-level admin: cafe owner and platform owner</li>
                         <li>Full restaurant flow, not a static menu page</li>
                     </ul>
+                    <NButton
+                        style="margin-top: 12px"
+                        label="This project is private"
+                        variant="default"
+                        disabled
+                    />
                 </NCard>
             </NLayout>
 
@@ -219,6 +270,12 @@
                         <li>Tells users what to learn and achieve to be ready</li>
                         <li>Modern, minimal interface</li>
                     </ul>
+                    <NButton
+                        style="margin-top: 12px"
+                        label="This project is under the development"
+                        variant="default"
+                        disabled
+                    />
                 </NCard>
                 <NBridge :direction="dir" />
                 <NCard size="thin" variant="dotted">
@@ -227,6 +284,7 @@
                         Nuxt 4
                     </NTitle>
                     <div class="project-icon-slot">
+                        <BaamLogo size="120" dot-color="#499df3"/>
                     </div>
                 </NCard>
             </NLayout>
@@ -362,15 +420,15 @@
                             looking to leave what I have.
                         </NTitle>
                     </NCard>
-                    <NBridge :direction="dir" />
-                    <NCard size="third" variant="accent">
+                    <NBridge :direction="dir" red />
+                    <NCard size="third" variant="alert">
                         <NTitle tag="h4" variant="h4" style="margin-top: 8px">Open to Extra Work</NTitle>
                         <NTitle tag="p" variant="body" color="secondary" style="margin-top: 8px">
                             I can take on additional companies alongside my current
                             role. More hours, more output, no overlap issues.
                         </NTitle>
                     </NCard>
-                    <NBridge :direction="dir" />
+                    <NBridge :direction="dir" red />
                     <NCard size="third">
                         <NTitle tag="span" variant="mono" color="muted">FREELANCE</NTitle>
                         <NTitle tag="h4" variant="h4" style="margin-top: 8px">Freelance Projects</NTitle>
@@ -381,14 +439,14 @@
                     </NCard>
                 </NLayout>
 
-                <NBridge direction="v" red />
+                <NBridge direction="v" />
 
-                <NCard size="wide" variant="alert">
-                    <NTitle tag="span" variant="overline" color="inverted">Get in Touch</NTitle>
-                    <NTitle tag="h3" variant="dot" style="margin-top: 12px">
+                <NCard size="wide" variant="dotted-red">
+                    <NTitle tag="span" variant="overline">Get in Touch</NTitle>
+                    <NTitle tag="h3" variant="dot" color="accent" style="margin-top: 12px">
                         github.com/kourva
                     </NTitle>
-                    <NTitle tag="p" variant="body" color="inverted" style="margin-top: 8px; opacity: 0.85">
+                    <NTitle tag="p" variant="body" style="margin-top: 8px; opacity: 0.85">
                         Best way to reach me. Email and Telegram.
                     </NTitle>
                     <div class="buttons">
@@ -415,6 +473,9 @@
                             label="EMail"
                         />
                     </div>
+                    <NTitle tag="p" variant="body" color="secondary" style="margin-top: 16px; opacity: 0.85">
+                        Feel free to explore my github to see what i've done before ;)
+                    </NTitle>
                 </NCard>
             </NLayout>
         </div>
@@ -433,6 +494,9 @@ import PythonIcon from '~/assets/images/python.png';
 import VueIcon from '~/assets/images/vue.png';
 import LaravelIcon from '~/assets/images/laravel.png';
 import NButton from '~/components/nothing/NButton.vue';
+import NigcLogo from '~/components/feedback/NigcLogo.vue';
+import CafeMahourLogo from '~/components/feedback/CafeMahourLogo.vue';
+import BaamLogo from '~/components/feedback/BaamLogo.vue';
 
 definePageMeta({
     name: 'home',

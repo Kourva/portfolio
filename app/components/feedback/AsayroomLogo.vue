@@ -1,5 +1,5 @@
 <template>
-    <div class="logo-wrapper">
+    <div>
         <svg 
             class="loading-logo" 
             width="96" 
@@ -35,6 +35,7 @@
     animation: draw 1s ease forwards, fillin 0.6s ease forwards;
     animation-fill-mode: forwards;
     animation-timeline: view();   
+    animation-range-end: 50%;
 }
 
 /* draw sequence delay */
