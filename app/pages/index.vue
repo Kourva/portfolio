@@ -136,16 +136,16 @@
                         <li>In-app wallets and payment gateways</li>
                         <li>Meeting handling with case history forms</li>
                     </ul>
-                    
-                    <NButton
-                        style="margin-top: 12px"
-                        tag="a"
-                        href="https://asayroom.ir"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        label="Open Asayroom"
-                        variant="default"
-                    />
+                    <div class="buttons">
+                        <NButton
+                            tag="a"
+                            href="https://asayroom.ir"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            label="Open Asayroom"
+                            variant="default"
+                        />
+                    </div>
                 </NCard>
             </NLayout>
 
@@ -171,24 +171,24 @@
                             <li>AI suggestions for usage</li>
                             <li>Built around gas thrift — how to use it properly</li>
                         </ul>
-                        <NButton
-                            style="margin-top: 12px"
-                            label="Open PWA App"
-                            tag="a"
-                            href="https://es.nigc-ar.ir/pwa2"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            variant="default"
-                        />
-                        <NButton
-                            style="margin-top: 12px"
-                            label="Open CRM App"
-                            tag="a"
-                            href="https://crm.nigc-ar.ir/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            variant="default"
-                        />
+                        <div class="buttons">
+                            <NButton
+                                label="Open PWA App"
+                                tag="a"
+                                href="https://es.nigc-ar.ir/pwa2"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                variant="default"
+                            />
+                            <NButton
+                                label="Open CRM App"
+                                tag="a"
+                                href="https://crm.nigc-ar.ir/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                variant="default"
+                            />
+                        </div>
                     </NCard>
                     <NBridge :direction="dir" />
                     <NCard size="thin" variant="dotted">
@@ -243,12 +243,13 @@
                         <li>Two-level admin: cafe owner and platform owner</li>
                         <li>Full restaurant flow, not a static menu page</li>
                     </ul>
-                    <NButton
-                        style="margin-top: 12px"
-                        label="This project is private"
-                        variant="default"
-                        disabled
-                    />
+                    <div class="buttons">
+                        <NButton
+                            label="This project is private"
+                            variant="default"
+                            disabled
+                        />
+                    </div>
                 </NCard>
             </NLayout>
 
@@ -270,12 +271,13 @@
                         <li>Tells users what to learn and achieve to be ready</li>
                         <li>Modern, minimal interface</li>
                     </ul>
-                    <NButton
-                        style="margin-top: 12px"
-                        label="This project is under the development"
-                        variant="default"
-                        disabled
-                    />
+                    <div class="buttons">
+                        <NButton
+                            label="This project is under the development"
+                            variant="default"
+                            disabled
+                        />
+                    </div>
                 </NCard>
                 <NBridge :direction="dir" />
                 <NCard size="thin" variant="dotted">
@@ -388,6 +390,16 @@
                         Every component follows the same rules: no dependencies,
                         dynamic where it earns it, structure first.
                     </NTitle>
+                    <div class="buttons">
+                        <NButton
+                            tag="a"
+                            href="https://kowshan-ui-kit.pages.dev/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            label="Open Kit"
+                            variant="default"
+                        />
+                    </div>
                 </NCard>
 
                 <NBridge direction="v" />
