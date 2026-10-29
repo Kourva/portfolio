@@ -383,12 +383,11 @@
 
                 <NBridge direction="v" red />
                 <NCard size="wide" variant="accent">
-                    <NTitle tag="span" variant="overline" color="muted">Built With It</NTitle>
-                    <NTitle tag="h4" variant="h4" style="margin-top: 8px">A Vue / Nuxt UI Kit</NTitle>
+                    <NTitle tag="span" variant="overline" color="muted">The AI Experiments</NTitle>
+                    <NTitle tag="h4" variant="h4" style="margin-top: 8px">Vibe Coded</NTitle>
                     <NTitle tag="p" variant="body" color="secondary" style="margin-top: 8px">
-                        A minimal, modern component kit, still under development.
-                        Every component follows the same rules: no dependencies,
-                        dynamic where it earns it, structure first.
+                        Tools, utilities, and open-source experiments built by directing AI. 
+                        No heavy abstractions, just raw ideas turned into functional software.
                     </NTitle>
                     <div class="buttons">
                         <NButton
@@ -397,6 +396,14 @@
                             target="_blank"
                             rel="noopener noreferrer"
                             label="Open Kit"
+                            variant="default"
+                        />
+                        <NButton
+                            tag="a"
+                            href="https://github.com/Kourva/xnode"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            label="XNODE (Android)"
                             variant="default"
                         />
                     </div>
