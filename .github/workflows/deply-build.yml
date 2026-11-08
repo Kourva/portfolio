@@ -35,4 +35,3 @@ jobs:
           external_repository: Kourva/Kourva.github.io
           publish_branch: main
           publish_dir: ./.output/public
-          force_orphan: true
