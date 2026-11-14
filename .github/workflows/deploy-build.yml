@@ -25,7 +25,6 @@ jobs:
       - name: Generate static site
         run: npm run generate
         env:
-          # Base URL is the root domain, not a subpath
           NUXT_APP_BASE_URL: /
 
       - name: Deploy to Kourva.github.io
