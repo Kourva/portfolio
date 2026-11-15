@@ -13,10 +13,10 @@
                 </div>
 
                 <div class="footer-right">
-                    <NTitle tag="h1" variant="mono" color="accent" class="footer-note">
+                    <NTitle tag="span" variant="mono" color="accent" class="footer-note">
                         Design? It's by my OS — Nothing TECH.
                     </NTitle>
-                    <NTitle tag="h1" variant="mono" color="accent" class="footer-year">
+                    <NTitle tag="span" variant="mono" color="accent" class="footer-year">
                         © {{ year }}
                     </NTitle>
                 </div>

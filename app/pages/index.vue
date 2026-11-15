@@ -2,12 +2,13 @@
     <main class="home">
         <div class="container">
             <NLayout direction="v">
-                <NCard size="wide">
+                <NCard id="about" size="wide">
                     <NTitle tag="span" variant="overline" color="muted">WHO AM I</NTitle>
                     <NTitle tag="h1" variant="dot" style="margin-top: 12px">Kourva</NTitle>
-                    <NTitle tag="p" variant="body" color="secondary" style="margin-top: 12px">
+                    <div class="about-body">
                         <NTitle tag="p" variant="body" color="secondary" style="margin-top: 16px">
-                            Six years into development, nine into Linux as my primary OS. I started
+                            I'm Sahand Farazmehr, known online as Kourva. Six years into
+                            development, nine into Linux as my primary OS. I started
                             with pure Python, Telegram bots, Android apps with Kivy and Flet, and
                             API-driven tools that scratched my own itches. Django and a bit of HTML
                             pulled me toward the web.
@@ -21,9 +22,9 @@
                             I won't pretend to know every inch of PHP, JS, or TS. I know what I need
                             to build real things, and that's carried me this far.
                         </NTitle>
-                    </NTitle>
-                    <NTitle tag="span" variant="overline" color="accent">
-                        Updated: Sep 13 2026
+                    </div>
+                    <NTitle tag="span" variant="overline" color="accent" style="margin-top: 12px; display: block">
+                        Updated: Nov 15 2026
                     </NTitle>
                 </NCard>
                 <NBridge direction="v" />
@@ -38,17 +39,20 @@
                                 :alt="tech.name"
                                 :title="tech.name"
                                 class="badge-img"
+                                width="46"
+                                height="46"
                                 loading="lazy"
+                                decoding="async"
                             />
                         </div>
                     </div>
                 </NCard>
             </NLayout>
 
-            <NLayout direction="h">
+            <NLayout id="approach" direction="h">
                 <NCard size="left" variant="accent">
                     <NTitle tag="span" variant="overline" color="muted">Style</NTitle>
-                    <NTitle tag="h3" variant="dot" style="margin-top: 12px">How I Write</NTitle>
+                    <NTitle tag="h2" variant="dot" style="margin-top: 12px">How I Write</NTitle>
                     <NTitle tag="p" variant="body" color="secondary" style="margin-top: 12px">
                         Solo by default. In pairs, I take the frontend.
                     </NTitle>
@@ -67,7 +71,7 @@
                 </NCard>
             </NLayout>
 
-            <NLayout direction="v">
+            <NLayout id="process" direction="v">
                 <NCard size="wide">
                     <NTitle tag="span" variant="overline" color="muted">Process</NTitle>
                     <NTitle tag="h2" variant="dot" style="margin-top: 12px">How I Work</NTitle>
@@ -85,7 +89,7 @@
                         size="cell"
                         :variant="item.variant"
                     >
-                        <NTitle tag="h4" variant="h4" style="margin-top: 8px">
+                        <NTitle tag="h3" variant="h4" style="margin-top: 8px">
                             {{ item.title }}
                         </NTitle>
                         <NTitle tag="p" variant="body" color="secondary" style="margin-top: 8px">
@@ -95,13 +99,13 @@
                 </NLayout>
             </NLayout>
 
-            <NLayout direction="v">
-                <NTitle tag="h1" variant="dot" color="accent" style="margin-top: 12px">
+            <NLayout id="projects" direction="v">
+                <NTitle tag="h2" variant="dot" color="accent" style="margin-top: 12px">
                     Things I've Built
                 </NTitle>
                 <NTitle tag="p" variant="body" color="secondary" style="margin-top: 12px">
                     Real projects, not demos. Multi-app platforms, internal tools, and
-                    fullstack systems — some public, some behind closed doors. All of
+                    fullstack systems, some public, some behind closed doors. All of
                     them built to run, not to showcase.
                 </NTitle>
             </NLayout>
@@ -119,7 +123,7 @@
                 </NCard>
                 <NBridge :direction="dir" />
                 <NCard size="grow">
-                    <NTitle tag="h4" variant="h4">Therapy Platform</NTitle>
+                    <NTitle tag="h3" variant="h4">Therapy Platform</NTitle>
                     <NTitle tag="p" variant="body" color="secondary" style="margin-top: 12px">
                         A national platform for psychology, psychiatry, and therapy
                         services, built to serve kids, teens, adults, and couples
@@ -153,7 +157,7 @@
             <div class="nigc-block">
                 <NLayout direction="h">
                     <NCard size="grow">
-                        <NTitle tag="h4" variant="h4">National Iranian Gas Company</NTitle>
+                        <NTitle tag="h3" variant="h4">National Iranian Gas Company</NTitle>
                         <NTitle tag="p" variant="body" color="secondary" style="margin-top: 12px">
                             Three separate Vue applications built for internal operations,
                             a CRM for staff, a PWA for field use, and a reward-based app
@@ -169,7 +173,7 @@
                             <li>Rich animations across the interface</li>
                             <li>Realtime photo taker for tasks</li>
                             <li>AI suggestions for usage</li>
-                            <li>Built around gas thrift — how to use it properly</li>
+                            <li>Built around gas thrift, how to use it properly</li>
                         </ul>
                         <div class="buttons">
                             <NButton
@@ -228,7 +232,7 @@
                 </NCard>
                 <NBridge :direction="dir" />
                 <NCard size="grow">
-                    <NTitle tag="h4" variant="h4">A Cafe Built for Meetings</NTitle>
+                    <NTitle tag="h3" variant="h4">A Cafe Built for Meetings</NTitle>
                     <NTitle tag="p" variant="body" color="secondary" style="margin-top: 12px">
                         Not a normal cafe site. This one is designed around consultants
                         and brokers who need a quiet place to meet clients, reserve a
@@ -256,7 +260,7 @@
             <!-- Baam -->
             <NLayout direction="h">
                 <NCard size="grow">
-                    <NTitle tag="h4" variant="h4">Professional Qualification System</NTitle>
+                    <NTitle tag="h3" variant="h4">Professional Qualification System</NTitle>
                     <NTitle tag="p" variant="body" color="secondary" style="margin-top: 12px">
                         A platform for inspectors, evaluators, and auditors to prove
                         their professional readiness. Users build a resume from
@@ -291,8 +295,8 @@
                 </NCard>
             </NLayout>
 
-            <NLayout direction="v">
-                <NTitle tag="h1" variant="dot" style="margin-top: 12px">
+            <NLayout id="stack" direction="v">
+                <NTitle tag="h2" variant="dot" style="margin-top: 12px">
                     Things I've Touched
                 </NTitle>
 
@@ -307,7 +311,7 @@
                         :key="item.name"
                         class="digged-item"
                     >
-                        <NTitle tag="h1" variant="dot" color="accent" class="digged-index">
+                        <NTitle tag="span" variant="dot" color="accent" class="digged-index">
                             {{ item.tag }}
                         </NTitle>
                         <NTitle tag="h5" variant="h5" color="default">
@@ -320,7 +324,7 @@
                 </div>
             </NLayout>
 
-            <NLayout direction="v">
+            <NLayout id="ai" direction="v">
                 <NCard size="wide" variant="dot-red">
                     <NTitle tag="h2" variant="dot" style="margin-top: 12px">How I Use AI</NTitle>
                     <NTitle tag="p" variant="body" color="secondary" style="margin-top: 8px">
@@ -333,7 +337,7 @@
                 <NLayout direction="h">
                     <NCard size="third">
                         <NTitle tag="span" variant="mono" color="muted">IDEAS</NTitle>
-                        <NTitle tag="h4" variant="h4" style="margin-top: 8px">Talking First</NTitle>
+                        <NTitle tag="h3" variant="h4" style="margin-top: 8px">Talking First</NTitle>
                         <NTitle tag="p" variant="body" color="secondary" style="margin-top: 8px">
                             I bounce ideas off it before writing a line. Just conversation
                             to see what falls out.
@@ -342,7 +346,7 @@
                     <NBridge :direction="dir" />
                     <NCard size="third">
                         <NTitle tag="span" variant="mono" color="muted">DESIGN</NTitle>
-                        <NTitle tag="h4" variant="h4" style="margin-top: 8px">Boring Styles</NTitle>
+                        <NTitle tag="h3" variant="h4" style="margin-top: 8px">Boring Styles</NTitle>
                         <NTitle tag="p" variant="body" color="secondary" style="margin-top: 8px">
                             Responsive rules, spacing math, repetitive CSS. The parts I
                             already know, just faster.
@@ -354,7 +358,7 @@
                 <NLayout direction="h">
                     <NCard size="third">
                         <NTitle tag="span" variant="mono" color="muted">SEARCH</NTitle>
-                        <NTitle tag="h4" variant="h4" style="margin-top: 8px">Replacing Manual Search</NTitle>
+                        <NTitle tag="h3" variant="h4" style="margin-top: 8px">Replacing Manual Search</NTitle>
                         <NTitle tag="p" variant="body" color="secondary" style="margin-top: 8px">
                             Instead of ten tabs, I ask once. Docs, error messages,
                             small syntax I forgot.
@@ -363,7 +367,7 @@
                     <NBridge :direction="dir" />
                     <NCard size="third">
                         <NTitle tag="span" variant="mono" color="muted">CONTROL</NTitle>
-                        <NTitle tag="h4" variant="h4" style="margin-top: 8px">Lead, Not Follow</NTitle>
+                        <NTitle tag="h3" variant="h4" style="margin-top: 8px">Lead, Not Follow</NTitle>
                         <NTitle tag="p" variant="body" color="secondary" style="margin-top: 8px">
                             I build the base and the structure. AI follows my rules,
                             not the other way around.
@@ -374,7 +378,7 @@
                 <NBridge direction="v" />
                 <NCard size="wide" variant="dotted">
                     <NTitle tag="span" variant="mono" color="muted">FALLBACK</NTitle>
-                    <NTitle tag="h4" variant="h4" style="margin-top: 8px">I Review, Not It</NTitle>
+                    <NTitle tag="h3" variant="h4" style="margin-top: 8px">I Review, Not It</NTitle>
                     <NTitle tag="p" variant="body" color="secondary" style="margin-top: 8px">
                         When AI is wrong or unavailable, I am the fallback. Every output
                         gets read before it ships.
@@ -384,7 +388,7 @@
                 <NBridge direction="v" red />
                 <NCard size="wide" variant="accent">
                     <NTitle tag="span" variant="overline" color="muted">The AI Experiments</NTitle>
-                    <NTitle tag="h4" variant="h4" style="margin-top: 8px">Vibe Coded</NTitle>
+                    <NTitle tag="h3" variant="h4" style="margin-top: 8px">Vibe Coded</NTitle>
                     <NTitle tag="p" variant="body" color="secondary" style="margin-top: 8px">
                         Tools, utilities, and open-source experiments built by directing AI. 
                         No heavy abstractions, just raw ideas turned into functional software.
@@ -421,9 +425,9 @@
                 </NCard>
             </NLayout>
 
-            <NLayout direction="v">
+            <NLayout id="work" direction="v">
                 <NCard size="wide">
-                    <NTitle tag="h1" variant="dot" style="margin-top: 12px">How I Can Contribute</NTitle>
+                    <NTitle tag="h2" variant="dot" style="margin-top: 12px">How I Can Contribute</NTitle>
                     <NTitle tag="p" variant="body" color="secondary" style="margin-top: 8px">
                         Three ways I take on work. Pick whichever fits.
                     </NTitle>
@@ -433,7 +437,7 @@
                 <NLayout direction="h">
                     <NCard size="third" variant="dot-red">
                         <NTitle tag="span" variant="mono" color="muted">NOW</NTitle>
-                        <NTitle tag="h4" variant="h4" style="margin-top: 8px">Currently Employed</NTitle>
+                        <NTitle tag="h3" variant="h4" style="margin-top: 8px">Currently Employed</NTitle>
                         <NTitle tag="p" variant="body" color="secondary" style="margin-top: 8px">
                             I'm already working fullstack. Steady, focused, and not
                             looking to leave what I have.
@@ -441,7 +445,7 @@
                     </NCard>
                     <NBridge :direction="dir" red />
                     <NCard size="third" variant="alert">
-                        <NTitle tag="h4" variant="h4" style="margin-top: 8px">Open to Extra Work</NTitle>
+                        <NTitle tag="h3" variant="h4" style="margin-top: 8px">Open to Extra Work</NTitle>
                         <NTitle tag="p" variant="body" color="secondary" style="margin-top: 8px">
                             I can take on additional companies alongside my current
                             role. More hours, more output, no overlap issues.
@@ -450,7 +454,7 @@
                     <NBridge :direction="dir" red />
                     <NCard size="third">
                         <NTitle tag="span" variant="mono" color="muted">FREELANCE</NTitle>
-                        <NTitle tag="h4" variant="h4" style="margin-top: 8px">Freelance Projects</NTitle>
+                        <NTitle tag="h3" variant="h4" style="margin-top: 8px">Freelance Projects</NTitle>
                         <NTitle tag="p" variant="body" color="secondary" style="margin-top: 8px">
                             Small, well-scoped projects. Frontend, backend, or both.
                             Clear start, clear end.
@@ -460,7 +464,7 @@
 
                 <NBridge direction="v" />
 
-                <NCard size="wide" variant="dotted-red">
+                <NCard id="contact" size="wide" variant="dotted-red">
                     <NTitle tag="span" variant="overline">Get in Touch</NTitle>
                     <NTitle tag="h3" variant="dot" color="accent" style="margin-top: 12px">
                         github.com/kourva
@@ -508,10 +512,10 @@ import NCard from '~/components/nothing/NCard.vue';
 import NLayout from '~/components/nothing/NLayout.vue';
 import NTitle from '~/components/nothing/NTitle.vue';
 
-import NuxtIcon from '~/assets/images/nuxt.png';
-import PythonIcon from '~/assets/images/python.png';
-import VueIcon from '~/assets/images/vue.png';
-import LaravelIcon from '~/assets/images/laravel.png';
+import NuxtIcon from '~/assets/images/nuxt.webp';
+import PythonIcon from '~/assets/images/python.webp';
+import VueIcon from '~/assets/images/vue.webp';
+import LaravelIcon from '~/assets/images/laravel.webp';
 import NButton from '~/components/nothing/NButton.vue';
 import NigcLogo from '~/components/feedback/NigcLogo.vue';
 import CafeMahourLogo from '~/components/feedback/CafeMahourLogo.vue';

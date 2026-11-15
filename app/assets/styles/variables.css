@@ -26,10 +26,10 @@
     --color-danger: #ef4444;
 
     /* Typography: font families */
-    --font-display: 'NType82', 'Space Grotesk', system-ui, sans-serif;
+    --font-display: 'NType82', system-ui, sans-serif;
     --font-body: 'Inter', system-ui, -apple-system, sans-serif;
-    --font-mono: 'Lettera Mono', 'NType82 Mono', 'Space Mono', ui-monospace, monospace;
-    --font-dot: 'Ndot', 'Ndot 57', 'Ndot 77', monospace;
+    --font-mono: 'Lettera Mono', ui-monospace, monospace;
+    --font-dot: 'Ndot', monospace;
 
     /* Type scale */
     --fs-xs: 0.75rem;
