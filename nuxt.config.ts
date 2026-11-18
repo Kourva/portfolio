@@ -39,6 +39,12 @@ export default defineNuxtConfig({
 
     css: ['~/assets/styles/main.css'],
 
+    // Inline the stylesheets into each prerendered page: no render-blocking
+    // CSS requests, which is what mobile LCP/FCP were waiting on.
+    features: {
+        inlineStyles: true
+    },
+
     app: {
         head: {
             // lang/dir, title, description, og:locale and hreflang are all set

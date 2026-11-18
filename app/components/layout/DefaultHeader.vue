@@ -33,7 +33,7 @@ import DotMatrixHeader from '../feedback/DotMatrixHeader.vue'
 const links = [
     { label: 'GitHub', href: 'https://github.com/kourva' },
     { label: 'Email', href: 'mailto:realkourva@proton.me' },
-    { label: 'Telegram', href: 'https://k0urv4.t.me' }
+    { label: 'Telegram', href: 'https://t.me/k0urv4' }
 ]
 </script>
 

@@ -17,18 +17,19 @@ const props = withDefaults(defineProps<{
     red?: boolean
     /**
      * Horizontal rows only:
-     * `center` (default) is a fixed-length bar centred on the row, so it always
-     * fits inside both neighbours even when their heights differ.
+     * `start` (default) is a fixed-length bar offset from the cards' top edge,
+     * matching the rest of the design.
+     * `center` vertically centres the bar on the row.
      * `stretch` fills the row between the two insets — pair it with
      * `<NLayout align="stretch">`, where equal heights make that exact.
      */
-    fit?: 'center' | 'stretch'
+    fit?: 'start' | 'center' | 'stretch'
 }>(), {
     direction: 'v',
     length: 80,
     offset: 32,
     red: false,
-    fit: 'center'
+    fit: 'start'
 })
 
 const directionClass = computed(() => `bridge-${props.direction}`)
@@ -70,11 +71,18 @@ const bridgeStyle = computed(() => {
 
 .bridge-h {
     width: 15px;
-    align-self: center;
+    align-self: flex-start;
     height: var(--bridge-length, 80px);
+    margin-block-start: var(--bridge-offset, 32px);
     border-top: 1px solid var(--color-border);
     border-bottom: 1px solid var(--color-border);
     margin-inline: -1px;
+}
+
+/* Centres the bar on the row instead of starting from the top edge. */
+.bridge-h.bridge-fit-center {
+    align-self: center;
+    margin-block-start: 0;
 }
 
 /* Fills the row; only correct together with `<NLayout align="stretch">`. */
@@ -107,6 +115,8 @@ const bridgeStyle = computed(() => {
 
 @media (max-width: 768px) {
     .bridge-h,
+    .bridge-h.bridge-fit-start,
+    .bridge-h.bridge-fit-center,
     .bridge-h.bridge-fit-stretch {
         align-self: flex-start;
         width: var(--bridge-length, 80px);

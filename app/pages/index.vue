@@ -311,7 +311,7 @@
                         <NTitle tag="span" variant="dot" color="accent" class="digged-index">
                             {{ $t(`touched.items.${item.key}.tag`) }}
                         </NTitle>
-                        <NTitle tag="h5" variant="h5" color="default">
+                        <NTitle tag="h3" variant="h4" color="default">
                             {{ item.name }}
                         </NTitle>
                         <NTitle tag="p" variant="body" color="secondary" class="digged-note">
