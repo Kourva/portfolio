@@ -14,23 +14,25 @@ export const SITE = {
     nativeName: 'سهند فرازمهر',
     handle: 'Kourva',
     brand: 'Kowshan',
-    title: 'Sahand Farazmehr (Kourva) — Fullstack Vue & Nuxt Developer',
-    shortTitle: 'Kourva — Fullstack Vue & Nuxt Developer',
+    title: 'Sahand Farazmehr (Kourva) — Fullstack Python Developer',
+    shortTitle: 'Kourva — Fullstack Python Developer',
     description:
-        'Sahand Farazmehr (Kourva) — fullstack developer shipping production Vue 3, Nuxt 4, Laravel and Python platforms. Six years in, remote-first from Iran.',
+        'Sahand Farazmehr (Kourva) — fullstack Python developer building production platforms with Django, Vue 3, Nuxt 4 and Laravel. Six years in, remote-first from Iran.',
     ogDescription:
-        'Six years of fullstack work: Vue 3, Nuxt 4, Laravel and Python. Real platforms for therapy, energy, and hospitality — not demos.',
+        'Fullstack Python developer: Django, Vue 3, Nuxt 4 and Laravel. Real platforms for therapy, energy, and hospitality — not demos.',
     email: 'realkourva@proton.me',
     city: 'Ardabil',
     region: 'Ardabil',
     country: 'IR',
     github: 'https://github.com/kourva',
     telegram: 'https://t.me/k0urv4',
+    instagram: 'https://instagram.com/k0urv4',
     uiKit: 'https://kowshan-ui-kit.pages.dev/',
     ogImage: `${SITE_URL}/og.png`,
     ogImageAlt:
         'Kourva — Sahand Farazmehr, fullstack Vue and Nuxt developer, portfolio homepage',
-    lastUpdated: '2026-11-15',
+    // Full ISO 8601 with the Iran offset — Google requires a datetime, not a bare date.
+    lastUpdated: '2026-11-18T00:00:00+03:30',
     locale: 'en_US'
 } as const
 
@@ -45,19 +47,21 @@ const BREADCRUMB_ID = `${SITE_URL}/#breadcrumb`
  * @id, so Google reads Person, Kowshan, the site and the projects as a single
  * connected entity instead of orphaned fragments.
  */
-export const STRUCTURED_DATA = {
+export const buildStructuredData = (inLanguage: string = 'en') => ({
     '@context': 'https://schema.org',
     '@graph': [
         {
             '@type': 'Person',
             '@id': PERSON_ID,
             name: SITE.name,
-            alternateName: [SITE.handle, SITE.nativeName],
+            // Latin, Persian and Cyrillic spellings, so a name search in any of
+            // the site's languages resolves to this person.
+            alternateName: [SITE.handle, SITE.name, SITE.nativeName, 'Саханд Фаразмехр', 'k0urv4'],
             url: SITE.home,
             image: SITE.ogImage,
-            jobTitle: 'Fullstack Developer',
+            jobTitle: 'Fullstack Python Developer',
             description:
-                'Fullstack developer with six years of experience and nine years of daily Linux use. Builds production platforms with Vue 3, Nuxt 4, Laravel and Python.',
+                'Fullstack Python developer with six years of experience and nine years of daily Linux use. Builds production platforms with Django, Vue 3, Nuxt 4 and Laravel.',
             email: `mailto:${SITE.email}`,
             address: {
                 '@type': 'PostalAddress',
@@ -65,13 +69,14 @@ export const STRUCTURED_DATA = {
                 addressRegion: SITE.region,
                 addressCountry: SITE.country
             },
-            areaServed: [
-                { '@type': 'City', name: 'Ardabil' },
-                { '@type': 'City', name: 'Tabriz' },
-                { '@type': 'City', name: 'Tehran' },
-                { '@type': 'Place', name: 'Worldwide (remote)' }
-            ],
-            sameAs: [SITE.github, SITE.telegram, SITE.uiKit],
+            // areaServed lives on the Organization node: it is not a Person property.
+            sameAs: [SITE.github, SITE.telegram, SITE.instagram, SITE.uiKit],
+            // Stable, non-URL identifier for this exact person entity.
+            identifier: {
+                '@type': 'PropertyValue',
+                propertyID: 'KourvaPersonID',
+                value: 'sahand-farazmehr'
+            },
             knowsAbout: [
                 'Vue.js',
                 'Nuxt',
@@ -93,12 +98,11 @@ export const STRUCTURED_DATA = {
             ],
             hasOccupation: {
                 '@type': 'Occupation',
-                name: 'Fullstack Web Developer',
-                skills: 'Vue 3, Nuxt 4, Laravel, PHP, Python, TypeScript, Linux, web security',
+                name: 'Fullstack Python Developer',
+                skills: 'Python, Django, Vue 3, Nuxt 4, Laravel, PHP, TypeScript, Linux, web security',
                 occupationLocation: { '@type': 'Country', name: 'Iran' }
             },
             worksFor: { '@id': ORG_ID },
-            founderOf: { '@id': ORG_ID },
             knowsLanguage: [
                 { '@type': 'Language', name: 'Persian', alternateName: 'fa' },
                 { '@type': 'Language', name: 'English', alternateName: 'en' }
@@ -117,11 +121,20 @@ export const STRUCTURED_DATA = {
                     userInteractionCount: 942
                 }
             ],
-            knownFor: {
-                '@type': 'CreativeWork',
+            // knownFor is not a Schema.org property; subjectOf is the valid link
+            // to the work this person is known for.
+            subjectOf: {
+                // SoftwareSourceCode, not CreativeWork: codeRepository and
+                // programmingLanguage are only valid on this subclass.
+                '@type': 'SoftwareSourceCode',
+                '@id': 'https://github.com/Kourva/AwesomeChatGPTBot',
                 name: 'AwesomeChatGPTBot',
                 description:
-                    'Open-source Telegram bot toolkit for ChatGPT, starred more than 120 times on GitHub.'
+                    'Free and rich-feature ChatGPT bot for Telegram, written in Python — 130 stars on GitHub.',
+                url: 'https://github.com/Kourva/AwesomeChatGPTBot',
+                codeRepository: 'https://github.com/Kourva/AwesomeChatGPTBot',
+                programmingLanguage: 'Python',
+                author: { '@id': PERSON_ID }
             }
         },
         {
@@ -138,7 +151,7 @@ export const STRUCTURED_DATA = {
             },
             image: SITE.ogImage,
             description:
-                'Kowshan is a small independent software studio — three developers and one designer — building web platforms with Vue, Nuxt, Laravel and Python.',
+                'Kowshan is a small independent software studio — three developers and one designer — building web platforms with Python, Django, Vue, Nuxt and Laravel.',
             founder: { '@id': PERSON_ID },
             email: `mailto:${SITE.email}`,
             address: {
@@ -156,7 +169,7 @@ export const STRUCTURED_DATA = {
                 minValue: 3,
                 maxValue: 4
             },
-            sameAs: [SITE.github, SITE.uiKit],
+            sameAs: [SITE.github, SITE.instagram, SITE.uiKit],
             contactPoint: [
                 {
                     '@type': 'ContactPoint',
@@ -173,7 +186,7 @@ export const STRUCTURED_DATA = {
             name: SITE.shortTitle,
             alternateName: 'Kourva Portfolio',
             description: SITE.description,
-            inLanguage: 'en',
+            inLanguage,
             publisher: { '@id': PERSON_ID },
             copyrightHolder: { '@id': PERSON_ID }
         },
@@ -186,7 +199,7 @@ export const STRUCTURED_DATA = {
             isPartOf: { '@id': WEBSITE_ID },
             about: { '@id': PERSON_ID },
             mainEntity: { '@id': PERSON_ID },
-            inLanguage: 'en',
+            inLanguage,
             dateModified: SITE.lastUpdated,
             primaryImageOfPage: {
                 '@type': 'ImageObject',
@@ -260,4 +273,4 @@ export const STRUCTURED_DATA = {
             ]
         }
     ]
-} as const
+})

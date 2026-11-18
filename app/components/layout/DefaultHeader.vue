@@ -6,7 +6,7 @@
                 <DotMatrixHeader size="50" />
                 <NuxtLink to="/" class="brand">
                     <span class="brand-name">Kourva</span>
-                    <span class="brand-role overline">Fullstack - Python - Linux</span>
+                    <span class="brand-role overline">{{ $t('header.role') }}</span>
                 </NuxtLink>
             </div>
 

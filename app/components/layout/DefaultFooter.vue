@@ -8,16 +8,16 @@
                         Kourva
                     </NTitle>
                     <NTitle tag="p" variant="mono" color="secondary" class="footer-regard">
-                        Thanks for scrolling. Built slow, kept simple.
+                        {{ $t('footer.tagline') }}
                     </NTitle>
                 </div>
 
                 <div class="footer-right">
                     <NTitle tag="span" variant="mono" color="accent" class="footer-note">
-                        Design? It's by my OS — Nothing TECH.
+                        {{ $t('footer.note') }}
                     </NTitle>
                     <NTitle tag="span" variant="mono" color="accent" class="footer-year">
-                        © {{ year }}
+                        {{ $t('footer.copyright', { year }) }}
                     </NTitle>
                 </div>
 

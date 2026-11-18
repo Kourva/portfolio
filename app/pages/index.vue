@@ -2,35 +2,51 @@
     <main class="home">
         <div class="container">
             <NLayout direction="v">
+                <!-- Language first, then the bridge connects it to WHO AM I:
+                     inside the section they share a flex column with no gap. -->
+                <NCard size="badges">
+                    <div class="badges-inner">
+                        <NTitle tag="span" variant="overline" color="muted">{{ $t('language.title') }}</NTitle>
+                        <div class="badges-row">
+                            <button
+                                v-for="item in locales"
+                                :key="item.code"
+                                type="button"
+                                class="lang-chip"
+                                :class="{ 'lang-chip--active': item.code === locale }"
+                                :lang="item.language"
+                                :title="item.name"
+                                :aria-current="item.code === locale ? 'true' : undefined"
+                                @click="switchLanguage(item.code)"
+                            >
+                                {{ item.code.toUpperCase() }}
+                            </button>
+                        </div>
+                    </div>
+                </NCard>
+                <NBridge direction="v" />
                 <NCard id="about" size="wide">
-                    <NTitle tag="span" variant="overline" color="muted">WHO AM I</NTitle>
+                    <NTitle tag="span" variant="overline" color="muted">{{ $t('about.overline') }}</NTitle>
                     <NTitle tag="h1" variant="dot" style="margin-top: 12px">Kourva</NTitle>
                     <div class="about-body">
                         <NTitle tag="p" variant="body" color="secondary" style="margin-top: 16px">
-                            I'm Sahand Farazmehr, known online as Kourva. Six years into
-                            development, nine into Linux as my primary OS. I started
-                            with pure Python, Telegram bots, Android apps with Kivy and Flet, and
-                            API-driven tools that scratched my own itches. Django and a bit of HTML
-                            pulled me toward the web.
+                            {{ $t('about.p1') }}
                         </NTitle>
                         <NTitle tag="p" variant="body" color="secondary" style="margin-top: 12px">
-                            The last three years have been fullstack: Vue and Laravel alongside Odoo,
-                            two jobs at once. The last year and a half, I've focused on Vue and Nuxt,
-                            shipping in a small team with one backend developer.
+                            {{ $t('about.p2') }}
                         </NTitle>
                         <NTitle tag="p" variant="body" color="secondary" style="margin-top: 12px">
-                            I won't pretend to know every inch of PHP, JS, or TS. I know what I need
-                            to build real things, and that's carried me this far.
+                            {{ $t('about.p3') }}
                         </NTitle>
                     </div>
                     <NTitle tag="span" variant="overline" color="accent" style="margin-top: 12px; display: block">
-                        Updated: Nov 15 2026
+                        {{ $t('about.updated') }}
                     </NTitle>
                 </NCard>
                 <NBridge direction="v" />
                 <NCard size="badges">
                     <div class="badges-inner">
-                        <NTitle tag="span" variant="overline" color="muted">Main Stack</NTitle>
+                        <NTitle tag="span" variant="overline" color="muted">{{ $t('stack.title') }}</NTitle>
                         <div class="badges-row">
                             <img
                                 v-for="tech in mainStack"
@@ -51,32 +67,30 @@
 
             <NLayout id="approach" direction="h">
                 <NCard size="left" variant="accent">
-                    <NTitle tag="span" variant="overline" color="muted">Style</NTitle>
-                    <NTitle tag="h2" variant="dot" style="margin-top: 12px">How I Write</NTitle>
+                    <NTitle tag="span" variant="overline" color="muted">{{ $t('style.overline') }}</NTitle>
+                    <NTitle tag="h2" variant="dot" style="margin-top: 12px">{{ $t('style.title') }}</NTitle>
                     <NTitle tag="p" variant="body" color="secondary" style="margin-top: 12px">
-                        Solo by default. In pairs, I take the frontend.
+                        {{ $t('style.body') }}
                     </NTitle>
                 </NCard>
                 <NBridge :direction="dir" />
                 <NCard size="right">
-                    <NTitle tag="span" variant="overline" color="muted">The Rules</NTitle>
+                    <NTitle tag="span" variant="overline" color="muted">{{ $t('rules.overline') }}</NTitle>
                     <NTitle tag="p" variant="body" color="secondary" style="margin-top: 12px">
-                        I prefer pure tech, plain CSS, minimal dependencies, code that
-                        reads like it was written by one person on purpose. Every project
-                        gets its own loaders and UI kit. No two should look alike.
+                        {{ $t('rules.p1') }}
                     </NTitle>
                     <NTitle tag="p" variant="body" color="secondary" style="margin-top: 12px">
-                        Structured. Simple. Dynamic where it earns it.
+                        {{ $t('rules.p2') }}
                     </NTitle>
                 </NCard>
             </NLayout>
 
             <NLayout id="process" direction="v">
                 <NCard size="wide">
-                    <NTitle tag="span" variant="overline" color="muted">Process</NTitle>
-                    <NTitle tag="h2" variant="dot" style="margin-top: 12px">How I Work</NTitle>
+                    <NTitle tag="span" variant="overline" color="muted">{{ $t('process.overline') }}</NTitle>
+                    <NTitle tag="h2" variant="dot" style="margin-top: 12px">{{ $t('process.title') }}</NTitle>
                     <NTitle tag="p" variant="body" color="secondary" style="margin-top: 8px">
-                        Eight main rules I follow on every project. Unless you don't want them!
+                        {{ $t('process.body') }}
                     </NTitle>
                 </NCard>
 
@@ -84,16 +98,16 @@
 
                 <NLayout direction="grid" :columns="3" :gap="16">
                     <NCard
-                        v-for="(item, i) in process"
-                        :key="item.title"
+                        v-for="item in process"
+                        :key="item.key"
                         size="cell"
                         :variant="item.variant"
                     >
                         <NTitle tag="h3" variant="h4" style="margin-top: 8px">
-                            {{ item.title }}
+                            {{ $t(`process.items.${item.key}.title`) }}
                         </NTitle>
                         <NTitle tag="p" variant="body" color="secondary" style="margin-top: 8px">
-                            {{ item.body }}
+                            {{ $t(`process.items.${item.key}.body`) }}
                         </NTitle>
                     </NCard>
                 </NLayout>
@@ -101,12 +115,10 @@
 
             <NLayout id="projects" direction="v">
                 <NTitle tag="h2" variant="dot" color="accent" style="margin-top: 12px">
-                    Things I've Built
+                    {{ $t('projects.title') }}
                 </NTitle>
                 <NTitle tag="p" variant="body" color="secondary" style="margin-top: 12px">
-                    Real projects, not demos. Multi-app platforms, internal tools, and
-                    fullstack systems, some public, some behind closed doors. All of
-                    them built to run, not to showcase.
+                    {{ $t('projects.body') }}
                 </NTitle>
             </NLayout>
 
@@ -114,8 +126,8 @@
             <NLayout direction="h">
                 <NCard size="thin" variant="dotted">
                     <NTitle tag="h3" variant="dot" style="margin-top: 12px">Asayroom</NTitle>
-                    <NTitle tag="p" variant="mono" color="muted" style="margin-top: 8px">
-                        Vue 3 + Nuxt 4
+                                            <NTitle tag="p" variant="mono" color="muted" style="margin-top: 8px">
+                        {{ $t('projects.asayroom.mono') }}
                     </NTitle>
                     <div class="project-icon-slot">
                         <AsayroomLogo/>
@@ -123,22 +135,18 @@
                 </NCard>
                 <NBridge :direction="dir" />
                 <NCard size="grow">
-                    <NTitle tag="h3" variant="h4">Therapy Platform</NTitle>
+                    <NTitle tag="h3" variant="h4">{{ $t('projects.asayroom.title') }}</NTitle>
                     <NTitle tag="p" variant="body" color="secondary" style="margin-top: 12px">
-                        A national platform for psychology, psychiatry, and therapy
-                        services, built to serve kids, teens, adults, and couples
-                        with different needs, schedules, and treatment styles.
-                        Multi-language, in-person and online, at national and
-                        international scale.
+                        {{ $t('projects.asayroom.body') }}
                     </NTitle>
                     <ul class="project-features">
-                        <li>Heavy flow verifications, video and image level</li>
-                        <li>Article system with up to 4 nested categories</li>
-                        <li>Training and consulting packages</li>
-                        <li>Full admin dashboard, almost everything is panel-controlled</li>
-                        <li>Assessments and matching tests for customers</li>
-                        <li>In-app wallets and payment gateways</li>
-                        <li>Meeting handling with case history forms</li>
+                        <li>{{ $t('projects.asayroom.f1') }}</li>
+                        <li>{{ $t('projects.asayroom.f2') }}</li>
+                        <li>{{ $t('projects.asayroom.f3') }}</li>
+                        <li>{{ $t('projects.asayroom.f4') }}</li>
+                        <li>{{ $t('projects.asayroom.f5') }}</li>
+                        <li>{{ $t('projects.asayroom.f6') }}</li>
+                        <li>{{ $t('projects.asayroom.f7') }}</li>
                     </ul>
                     <div class="buttons">
                         <NButton
@@ -146,7 +154,7 @@
                             href="https://asayroom.ir"
                             target="_blank"
                             rel="noopener noreferrer"
-                            label="Open Asayroom"
+                            :label="$t('projects.asayroom.cta')"
                             variant="default"
                         />
                     </div>
@@ -157,27 +165,24 @@
             <div class="nigc-block">
                 <NLayout direction="h">
                     <NCard size="grow">
-                        <NTitle tag="h3" variant="h4">National Iranian Gas Company</NTitle>
+                        <NTitle tag="h3" variant="h4">{{ $t('projects.nigc.title') }}</NTitle>
                         <NTitle tag="p" variant="body" color="secondary" style="margin-top: 12px">
-                            Three separate Vue applications built for internal operations,
-                            a CRM for staff, a PWA for field use, and a reward-based app
-                            for engagement. All modern, all multi-theme, each with its
-                            own visual identity rather than a shared template.
+                            {{ $t('projects.nigc.body') }}
                         </NTitle>
                         <ul class="project-features">
-                            <li>Three independent apps, CRM, PWA, Gaziom</li>
-                            <li>Multi-theme support across all three</li>
-                            <li>Unique design per app, no shared UI kit</li>
-                            <li>Security-focused build for internal use</li>
-                            <li>Modern, current-generation interfaces</li>
-                            <li>Rich animations across the interface</li>
-                            <li>Realtime photo taker for tasks</li>
-                            <li>AI suggestions for usage</li>
-                            <li>Built around gas thrift, how to use it properly</li>
+                            <li>{{ $t('projects.nigc.f1') }}</li>
+                            <li>{{ $t('projects.nigc.f2') }}</li>
+                            <li>{{ $t('projects.nigc.f3') }}</li>
+                            <li>{{ $t('projects.nigc.f4') }}</li>
+                            <li>{{ $t('projects.nigc.f5') }}</li>
+                            <li>{{ $t('projects.nigc.f6') }}</li>
+                            <li>{{ $t('projects.nigc.f7') }}</li>
+                            <li>{{ $t('projects.nigc.f8') }}</li>
+                            <li>{{ $t('projects.nigc.f9') }}</li>
                         </ul>
                         <div class="buttons">
                             <NButton
-                                label="Open PWA App"
+                                :label="$t('projects.nigc.pwa')"
                                 tag="a"
                                 href="https://es.nigc-ar.ir/pwa2"
                                 target="_blank"
@@ -185,7 +190,7 @@
                                 variant="default"
                             />
                             <NButton
-                                label="Open CRM App"
+                                :label="$t('projects.nigc.crm')"
                                 tag="a"
                                 href="https://crm.nigc-ar.ir/"
                                 target="_blank"
@@ -198,7 +203,7 @@
                     <NCard size="thin" variant="dotted">
                         <NTitle tag="h3" variant="dot" style="margin-top: 12px">NIGC</NTitle>
                         <NTitle tag="p" variant="mono" color="muted" style="margin-top: 8px">
-                            Vue 3, CRM + PWA + Gaziom
+                            {{ $t('projects.nigc.mono') }}
                         </NTitle>
                         <div class="project-icon-slot">
                             <NigcLogo/>
@@ -208,10 +213,9 @@
                 <NBridge direction="v" />
                 <NLayout direction="h" >
                     <NCard size="grow" variant="dot-red">
-                        <NTitle tag="h4" variant="dot" style="margin-top: 8px">GAZIOM</NTitle>
+                        <NTitle tag="h4" variant="dot" style="margin-top: 8px">{{ $t('projects.nigc.gaziom.title') }}</NTitle>
                         <NTitle tag="p" variant="body" color="secondary" style="margin-top: 8px">
-                            Reward-based PWA. Tasks, leaderboard, minimal profile,
-                            video content.
+                            {{ $t('projects.nigc.gaziom.body') }}
                         </NTitle>
                         <div class="project-icon-slot">
                         </div>
@@ -223,8 +227,8 @@
             <NLayout direction="h">
                 <NCard size="thin" variant="dotted">
                     <NTitle tag="h3" variant="dot" style="margin-top: 12px">Cafe Mahour</NTitle>
-                    <NTitle tag="p" variant="mono" color="muted" style="margin-top: 8px">
-                        Nuxt 3
+                                            <NTitle tag="p" variant="mono" color="muted" style="margin-top: 8px">
+                        {{ $t('projects.mahour.mono') }}
                     </NTitle>
                     <div class="project-icon-slot">
                         <CafeMahourLogo size="120" dot-color="#C5A981" bg-color="#129A42"/>
@@ -232,24 +236,21 @@
                 </NCard>
                 <NBridge :direction="dir" />
                 <NCard size="grow">
-                    <NTitle tag="h3" variant="h4">A Cafe Built for Meetings</NTitle>
+                    <NTitle tag="h3" variant="h4">{{ $t('projects.mahour.title') }}</NTitle>
                     <NTitle tag="p" variant="body" color="secondary" style="margin-top: 12px">
-                        Not a normal cafe site. This one is designed around consultants
-                        and brokers who need a quiet place to meet clients, reserve a
-                        table, order from a menu, and get down to business. Full
-                        restaurant logic behind a reservation-first front.
+                        {{ $t('projects.mahour.body') }}
                     </NTitle>
                     <ul class="project-features">
-                        <li>Cafe admin defines its own products, tea, food, full menu</li>
-                        <li>Table reservations with packages and bundled products</li>
-                        <li>Consultants and brokers book space to meet clients</li>
-                        <li>Main admin controls site resources and content</li>
-                        <li>Two-level admin: cafe owner and platform owner</li>
-                        <li>Full restaurant flow, not a static menu page</li>
+                        <li>{{ $t('projects.mahour.f1') }}</li>
+                        <li>{{ $t('projects.mahour.f2') }}</li>
+                        <li>{{ $t('projects.mahour.f3') }}</li>
+                        <li>{{ $t('projects.mahour.f4') }}</li>
+                        <li>{{ $t('projects.mahour.f5') }}</li>
+                        <li>{{ $t('projects.mahour.f6') }}</li>
                     </ul>
                     <div class="buttons">
                         <NButton
-                            label="This project is private"
+                            :label="$t('projects.mahour.cta')"
                             variant="default"
                             disabled
                         />
@@ -260,24 +261,21 @@
             <!-- Baam -->
             <NLayout direction="h">
                 <NCard size="grow">
-                    <NTitle tag="h3" variant="h4">Professional Qualification System</NTitle>
+                    <NTitle tag="h3" variant="h4">{{ $t('projects.baam.title') }}</NTitle>
                     <NTitle tag="p" variant="body" color="secondary" style="margin-top: 12px">
-                        A platform for inspectors, evaluators, and auditors to prove
-                        their professional readiness. Users build a resume from
-                        scratch, pick the roles they want, and the system tells them
-                        exactly what is missing to get there.
+                        {{ $t('projects.baam.body') }}
                     </NTitle>
                     <ul class="project-features">
-                        <li>Built-in resume maker, skills, knowledge, capabilities, behaviours</li>
-                        <li>Job selection and favorites</li>
-                        <li>Automatic gap analysis per career path</li>
-                        <li>Suggests assessments, courses, podcasts, articles</li>
-                        <li>Tells users what to learn and achieve to be ready</li>
-                        <li>Modern, minimal interface</li>
+                        <li>{{ $t('projects.baam.f1') }}</li>
+                        <li>{{ $t('projects.baam.f2') }}</li>
+                        <li>{{ $t('projects.baam.f3') }}</li>
+                        <li>{{ $t('projects.baam.f4') }}</li>
+                        <li>{{ $t('projects.baam.f5') }}</li>
+                        <li>{{ $t('projects.baam.f6') }}</li>
                     </ul>
                     <div class="buttons">
                         <NButton
-                            label="This project is under the development"
+                            :label="$t('projects.baam.cta')"
                             variant="default"
                             disabled
                         />
@@ -286,8 +284,8 @@
                 <NBridge :direction="dir" />
                 <NCard size="thin" variant="dotted">
                     <NTitle tag="h3" variant="dot" style="margin-top: 12px">Baam</NTitle>
-                    <NTitle tag="p" variant="mono" color="muted" style="margin-top: 8px">
-                        Nuxt 4
+                                            <NTitle tag="p" variant="mono" color="muted" style="margin-top: 8px">
+                        {{ $t('projects.baam.mono') }}
                     </NTitle>
                     <div class="project-icon-slot">
                         <BaamLogo size="120" dot-color="#499df3"/>
@@ -297,12 +295,11 @@
 
             <NLayout id="stack" direction="v">
                 <NTitle tag="h2" variant="dot" style="margin-top: 12px">
-                    Things I've Touched
+                    {{ $t('touched.title') }}
                 </NTitle>
 
                 <NTitle tag="p" variant="body" color="secondary" style="margin-top: 12px">
-                    Not a skills list. Just tools and ideas I've crossed paths with,
-                    some deeply, some only enough to know what they are.
+                    {{ $t('touched.body') }}
                 </NTitle>
 
                 <div class="digged-grid">
@@ -312,13 +309,13 @@
                         class="digged-item"
                     >
                         <NTitle tag="span" variant="dot" color="accent" class="digged-index">
-                            {{ item.tag }}
+                            {{ $t(`touched.items.${item.key}.tag`) }}
                         </NTitle>
                         <NTitle tag="h5" variant="h5" color="default">
                             {{ item.name }}
                         </NTitle>
                         <NTitle tag="p" variant="body" color="secondary" class="digged-note">
-                            {{ item.note }}
+                            {{ $t(`touched.items.${item.key}.note`) }}
                         </NTitle>
                     </div>
                 </div>
@@ -326,30 +323,27 @@
 
             <NLayout id="ai" direction="v">
                 <NCard size="wide" variant="dot-red">
-                    <NTitle tag="h2" variant="dot" style="margin-top: 12px">How I Use AI</NTitle>
+                    <NTitle tag="h2" variant="dot" style="margin-top: 12px">{{ $t('ai.title') }}</NTitle>
                     <NTitle tag="p" variant="body" color="secondary" style="margin-top: 8px">
-                        It's a tool, not a teammate. I use it for the boring parts and
-                        keep the decisions for myself.
+                        {{ $t('ai.body') }}
                     </NTitle>
                 </NCard>
 
                 <NBridge direction="v" />
                 <NLayout direction="h">
                     <NCard size="third">
-                        <NTitle tag="span" variant="mono" color="muted">IDEAS</NTitle>
-                        <NTitle tag="h3" variant="h4" style="margin-top: 8px">Talking First</NTitle>
+                        <NTitle tag="span" variant="mono" color="muted">{{ $t('ai.cards.ideas.label') }}</NTitle>
+                        <NTitle tag="h3" variant="h4" style="margin-top: 8px">{{ $t('ai.cards.ideas.title') }}</NTitle>
                         <NTitle tag="p" variant="body" color="secondary" style="margin-top: 8px">
-                            I bounce ideas off it before writing a line. Just conversation
-                            to see what falls out.
+                            {{ $t('ai.cards.ideas.body') }}
                         </NTitle>
                     </NCard>
                     <NBridge :direction="dir" />
                     <NCard size="third">
-                        <NTitle tag="span" variant="mono" color="muted">DESIGN</NTitle>
-                        <NTitle tag="h3" variant="h4" style="margin-top: 8px">Boring Styles</NTitle>
+                        <NTitle tag="span" variant="mono" color="muted">{{ $t('ai.cards.design.label') }}</NTitle>
+                        <NTitle tag="h3" variant="h4" style="margin-top: 8px">{{ $t('ai.cards.design.title') }}</NTitle>
                         <NTitle tag="p" variant="body" color="secondary" style="margin-top: 8px">
-                            Responsive rules, spacing math, repetitive CSS. The parts I
-                            already know, just faster.
+                            {{ $t('ai.cards.design.body') }}
                         </NTitle>
                     </NCard>
                 </NLayout>
@@ -357,41 +351,37 @@
                 <NBridge direction="v" :offset="32" />
                 <NLayout direction="h">
                     <NCard size="third">
-                        <NTitle tag="span" variant="mono" color="muted">SEARCH</NTitle>
-                        <NTitle tag="h3" variant="h4" style="margin-top: 8px">Replacing Manual Search</NTitle>
+                        <NTitle tag="span" variant="mono" color="muted">{{ $t('ai.cards.search.label') }}</NTitle>
+                        <NTitle tag="h3" variant="h4" style="margin-top: 8px">{{ $t('ai.cards.search.title') }}</NTitle>
                         <NTitle tag="p" variant="body" color="secondary" style="margin-top: 8px">
-                            Instead of ten tabs, I ask once. Docs, error messages,
-                            small syntax I forgot.
+                            {{ $t('ai.cards.search.body') }}
                         </NTitle>
                     </NCard>
                     <NBridge :direction="dir" />
                     <NCard size="third">
-                        <NTitle tag="span" variant="mono" color="muted">CONTROL</NTitle>
-                        <NTitle tag="h3" variant="h4" style="margin-top: 8px">Lead, Not Follow</NTitle>
+                        <NTitle tag="span" variant="mono" color="muted">{{ $t('ai.cards.control.label') }}</NTitle>
+                        <NTitle tag="h3" variant="h4" style="margin-top: 8px">{{ $t('ai.cards.control.title') }}</NTitle>
                         <NTitle tag="p" variant="body" color="secondary" style="margin-top: 8px">
-                            I build the base and the structure. AI follows my rules,
-                            not the other way around.
+                            {{ $t('ai.cards.control.body') }}
                         </NTitle>
                     </NCard>
                 </NLayout>
 
                 <NBridge direction="v" />
                 <NCard size="wide" variant="dotted">
-                    <NTitle tag="span" variant="mono" color="muted">FALLBACK</NTitle>
-                    <NTitle tag="h3" variant="h4" style="margin-top: 8px">I Review, Not It</NTitle>
+                    <NTitle tag="span" variant="mono" color="muted">{{ $t('ai.fallback.label') }}</NTitle>
+                    <NTitle tag="h3" variant="h4" style="margin-top: 8px">{{ $t('ai.fallback.title') }}</NTitle>
                     <NTitle tag="p" variant="body" color="secondary" style="margin-top: 8px">
-                        When AI is wrong or unavailable, I am the fallback. Every output
-                        gets read before it ships.
+                        {{ $t('ai.fallback.body') }}
                     </NTitle>
                 </NCard>
 
                 <NBridge direction="v" red />
                 <NCard size="wide" variant="accent">
-                    <NTitle tag="span" variant="overline" color="muted">The AI Experiments</NTitle>
-                    <NTitle tag="h3" variant="h4" style="margin-top: 8px">Vibe Coded</NTitle>
+                    <NTitle tag="span" variant="overline" color="muted">{{ $t('ai.experiments.overline') }}</NTitle>
+                    <NTitle tag="h3" variant="h4" style="margin-top: 8px">{{ $t('ai.experiments.title') }}</NTitle>
                     <NTitle tag="p" variant="body" color="secondary" style="margin-top: 8px">
-                        Tools, utilities, and open-source experiments built by directing AI. 
-                        No heavy abstractions, just raw ideas turned into functional software.
+                        {{ $t('ai.experiments.body') }}
                     </NTitle>
                     <div class="buttons">
                         <NButton
@@ -399,7 +389,7 @@
                             href="https://kowshan-ui-kit.pages.dev/"
                             target="_blank"
                             rel="noopener noreferrer"
-                            label="Open Kit"
+                            :label="$t('ai.experiments.kit')"
                             variant="default"
                         />
                         <NButton
@@ -407,7 +397,7 @@
                             href="https://github.com/Kourva/xnode"
                             target="_blank"
                             rel="noopener noreferrer"
-                            label="XNODE (Android)"
+                            :label="$t('ai.experiments.xnode')"
                             variant="default"
                         />
                     </div>
@@ -415,49 +405,45 @@
 
                 <NBridge direction="v" />
                 <NCard size="wide">
-                    <NTitle tag="span" variant="overline" color="muted">On Agentic AI</NTitle>
+                    <NTitle tag="span" variant="overline" color="muted">{{ $t('ai.agentic.overline') }}</NTitle>
                     <NTitle tag="p" variant="body" color="secondary" style="margin-top: 12px">
-                        I don't ask agents to build me an app unless I'm prototyping
-                        on a stack I don't know. Anything I plan to maintain, I
-                        write myself. The base, the structure, the decisions, mine.
-                        AI follows.
+                        {{ $t('ai.agentic.body') }}
                     </NTitle>
                 </NCard>
             </NLayout>
 
             <NLayout id="work" direction="v">
                 <NCard size="wide">
-                    <NTitle tag="h2" variant="dot" style="margin-top: 12px">How I Can Contribute</NTitle>
+                    <NTitle tag="h2" variant="dot" style="margin-top: 12px">{{ $t('work.title') }}</NTitle>
                     <NTitle tag="p" variant="body" color="secondary" style="margin-top: 8px">
-                        Three ways I take on work. Pick whichever fits.
+                        {{ $t('work.body') }}
                     </NTitle>
                 </NCard>
 
                 <NBridge direction="v" />
-                <NLayout direction="h">
+                <!-- These three cards wrap differently, so their heights are
+                     evened out and the connectors fill the row. -->
+                <NLayout direction="h" align="stretch">
                     <NCard size="third" variant="dot-red">
-                        <NTitle tag="span" variant="mono" color="muted">NOW</NTitle>
-                        <NTitle tag="h3" variant="h4" style="margin-top: 8px">Currently Employed</NTitle>
+                        <NTitle tag="span" variant="mono" color="muted">{{ $t('work.now.label') }}</NTitle>
+                        <NTitle tag="h3" variant="h4" style="margin-top: 8px">{{ $t('work.now.title') }}</NTitle>
                         <NTitle tag="p" variant="body" color="secondary" style="margin-top: 8px">
-                            I'm already working fullstack. Steady, focused, and not
-                            looking to leave what I have.
+                            {{ $t('work.now.body') }}
                         </NTitle>
                     </NCard>
-                    <NBridge :direction="dir" red />
+                    <NBridge :direction="dir" fit="stretch" red />
                     <NCard size="third" variant="alert">
-                        <NTitle tag="h3" variant="h4" style="margin-top: 8px">Open to Extra Work</NTitle>
+                        <NTitle tag="h3" variant="h4" style="margin-top: 8px">{{ $t('work.extra.title') }}</NTitle>
                         <NTitle tag="p" variant="body" color="secondary" style="margin-top: 8px">
-                            I can take on additional companies alongside my current
-                            role. More hours, more output, no overlap issues.
+                            {{ $t('work.extra.body') }}
                         </NTitle>
                     </NCard>
-                    <NBridge :direction="dir" red />
+                    <NBridge :direction="dir" fit="stretch" red />
                     <NCard size="third">
-                        <NTitle tag="span" variant="mono" color="muted">FREELANCE</NTitle>
-                        <NTitle tag="h3" variant="h4" style="margin-top: 8px">Freelance Projects</NTitle>
+                        <NTitle tag="span" variant="mono" color="muted">{{ $t('work.freelance.label') }}</NTitle>
+                        <NTitle tag="h3" variant="h4" style="margin-top: 8px">{{ $t('work.freelance.title') }}</NTitle>
                         <NTitle tag="p" variant="body" color="secondary" style="margin-top: 8px">
-                            Small, well-scoped projects. Frontend, backend, or both.
-                            Clear start, clear end.
+                            {{ $t('work.freelance.body') }}
                         </NTitle>
                     </NCard>
                 </NLayout>
@@ -465,12 +451,12 @@
                 <NBridge direction="v" />
 
                 <NCard id="contact" size="wide" variant="dotted-red">
-                    <NTitle tag="span" variant="overline">Get in Touch</NTitle>
+                    <NTitle tag="span" variant="overline">{{ $t('contact.overline') }}</NTitle>
                     <NTitle tag="h3" variant="dot" color="accent" style="margin-top: 12px">
                         github.com/kourva
                     </NTitle>
                     <NTitle tag="p" variant="body" style="margin-top: 8px; opacity: 0.85">
-                        Best way to reach me. Email and Telegram.
+                        {{ $t('contact.note') }}
                     </NTitle>
                     <div class="buttons">
                         <NButton
@@ -478,7 +464,7 @@
                             href="https://github.com/kourva"
                             target="_blank"
                             rel="noopener noreferrer"
-                            label="GitHub"
+                            :label="$t('contact.github')"
                             variant="primary"
                         />
                         <NButton
@@ -486,18 +472,25 @@
                             href="https://t.me/k0urv4"
                             target="_blank"
                             rel="noopener noreferrer"
-                            label="Telegram"
+                            :label="$t('contact.telegram')"
+                        />
+                        <NButton
+                            tag="a"
+                            href="https://instagram.com/k0urv4"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            :label="$t('contact.instagram')"
                         />
                         <NButton
                             tag="a"
                             href="mailto:realkourva@proton.me"
                             target="_blank"
                             rel="noopener noreferrer"
-                            label="EMail"
+                            :label="$t('contact.email')"
                         />
                     </div>
                     <NTitle tag="p" variant="body" color="secondary" style="margin-top: 16px; opacity: 0.85">
-                        Feel free to explore my github to see what i've done before ;)
+                        {{ $t('contact.follow') }}
                     </NTitle>
                 </NCard>
             </NLayout>
@@ -528,6 +521,16 @@ definePageMeta({
 
 const dir = useResponsiveDirection()
 
+// Language switcher: navigates to the prefixed route of the chosen locale, so
+// every language is a real, crawlable URL (/tr, /ru, /ar, /fa).
+const { locale, locales } = useI18n();
+const switchLocalePath = useSwitchLocalePath();
+
+const switchLanguage = (code: string) => {
+    const path = switchLocalePath(code as 'en');
+    if (path) return navigateTo(path);
+};
+
 const mainStack = [
     { name: 'Python', icon: PythonIcon },
     { name: 'Vue', icon: VueIcon },
@@ -535,90 +538,28 @@ const mainStack = [
     { name: 'Laravel', icon: LaravelIcon }
 ]
 
+// Only keys + styling live here; every string is in i18n/locales/*.json.
 const process = [
-    {
-        title: 'Style',
-        body: 'Minimal and up to date. Nothing heavy, nothing dated. Every project gets its own look, not a recycled template.',
-        variant: 'default' as const
-    },
-    {
-        title: 'Motion',
-        body: 'Light animation with weight. GSAP for the moments that matter, plain CSS everywhere else. Never decoration, always signal.',
-        variant: 'default' as const
-    },
-    {
-        title: 'Security',
-        body: 'Encryption and security are not features, they are defaults. I treat every input as hostile until proven otherwise.',
-        variant: 'dotted-red' as const
-    },
-    {
-        title: 'Structure',
-        body: 'Clean folders, clean assets. If a new dev cannot find where things live in 30 seconds, the structure failed.',
-        variant: 'default' as const
-    },
-    {
-        title: 'Version Control',
-        body: 'Git from the first commit. Small branches, readable history, no force-pushes to shared branches. Ever.',
-        variant: 'default' as const
-    },
-    {
-        title: 'Docs',
-        body: 'Optional until it is not. If someone else will read the code, they get a README that explains the why.',
-        variant: 'dotted' as const
-    },
-    {
-        title: 'DevOps',
-        body: 'Small helpers that remove friction, deploy scripts, Makefiles, one-command setups. Management should be boring.',
-        variant: 'accent' as const
-    },
-    {
-        title: 'State',
-        body: 'Dynamic where it counts. More control over loading, error, empty, and success states than most apps bother with.',
-        variant: 'default' as const
-    }
+    { key: 'style', variant: 'default' as const },
+    { key: 'motion', variant: 'default' as const },
+    { key: 'security', variant: 'dotted-red' as const },
+    { key: 'structure', variant: 'default' as const },
+    { key: 'versionControl', variant: 'default' as const },
+    { key: 'docs', variant: 'dotted' as const },
+    { key: 'devops', variant: 'accent' as const },
+    { key: 'state', variant: 'default' as const }
 ]
 
+// Tool names stay literal (they are proper nouns); tag + note come from i18n.
 const digged = [
-    {
-        tag: 'BACKEND',
-        name: 'Django',
-        note: 'Enough to build real apps. Not my daily driver anymore.'
-    },
-    {
-        tag: 'MOBILE',
-        name: 'Kivy / Flet',
-        note: 'Shipped a few Android apps with both. Flet felt lighter.'
-    },
-    {
-        tag: 'WEB',
-        name: 'HTML / CSS / JS / TS',
-        note: 'Comfortable in the browser. TS when a project earns it.'
-    },
-    {
-        tag: 'BOTS',
-        name: 'Telegram / telebot / PTB',
-        note: 'Dozens of bots over the years. Some still running.'
-    },
-    {
-        tag: 'DATA',
-        name: 'SQL / SQLite',
-        note: 'I can read a schema and write the query. Not a DBA.'
-    },
-    {
-        tag: 'SYSTEMS',
-        name: 'Linux Admin',
-        note: 'Down to chroot, systemd, and the ugly parts. Daily OS.'
-    },
-    {
-        tag: 'SECURITY',
-        name: 'XSS / SQLi / IDOR / DDoS',
-        note: 'I know what they are and how to avoid them. Not a pentester.'
-    },
-    {
-        tag: 'INFRA',
-        name: 'Load Balancing',
-        note: 'Theory only. Have not run it in production yet.'
-    }
+    { key: 'django', name: 'Django' },
+    { key: 'kivy', name: 'Kivy / Flet' },
+    { key: 'web', name: 'HTML / CSS / JS / TS' },
+    { key: 'bots', name: 'Telegram / telebot / PTB' },
+    { key: 'sql', name: 'SQL / SQLite' },
+    { key: 'linux', name: 'Linux Admin' },
+    { key: 'security', name: 'XSS / SQLi / IDOR / DDoS' },
+    { key: 'infra', name: 'Load Balancing' }
 ]
 </script>
 
@@ -669,6 +610,45 @@ const digged = [
     gap: 12px;
     justify-content: center;
     height: 100%;
+}
+
+.lang-chip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 46px;
+    min-width: 46px;
+    padding: 0 10px;
+    font-family: var(--font-mono, 'Lettera Mono');
+    font-size: var(--fs-xs, 0.75rem);
+    font-weight: 500;
+    letter-spacing: var(--ls-wider, 0.15em);
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    background: var(--color-bg-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: color var(--duration-fast) var(--ease-out),
+                border-color var(--duration-fast) var(--ease-out),
+                transform var(--duration-fast) var(--ease-out);
+}
+
+.lang-chip:hover {
+    color: var(--color-text);
+    border-color: var(--color-accent);
+    transform: translateY(-2px);
+}
+
+.lang-chip--active {
+    color: var(--color-text);
+    border-color: var(--color-accent);
+    background: var(--color-bg-hover);
+}
+
+.lang-chip:focus-visible {
+    outline: 2px solid var(--color-border-focus);
+    outline-offset: 2px;
 }
 
 .nigc-block {
@@ -761,7 +741,13 @@ const digged = [
 .buttons {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     gap: 10px;
     padding-top: 10px;
+}
+
+/* Never let a label push a button past the card edge on narrow screens. */
+.buttons > * {
+    max-width: 100%;
 }
 </style>

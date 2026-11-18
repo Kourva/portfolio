@@ -1,0 +1,208 @@
+{
+  "language": { "title": "Dil" },
+  "meta": {
+    "title": "Sahand Farazmehr (Kourva) — Fullstack Python Geliştirici",
+    "description": "Sahand Farazmehr (Kourva) — Django, Vue 3, Nuxt 4 ve Laravel ile üretim platformları geliştiren fullstack Python geliştiricisi. Altı yıllık deneyim, İran'dan uzaktan."
+  },
+  "stack": { "title": "Ana Teknoloji Yığını" },
+  "loading": { "label": "yükleniyor..." },
+
+  "header": {
+    "role": "Fullstack - Python - Linux"
+  },
+
+  "about": {
+    "overline": "BEN KİMİM",
+    "p1": "Ben Sahand Farazmehr, internette Kourva olarak tanınıyorum. Geliştirmede altı, Linux'u birincil işletim sistemi olarak kullanmada dokuz yılım var. Saf Python ile, Telegram botlarıyla, Kivy ve Flet ile Android uygulamalarıyla ve kendi ihtiyaçlarımı karşılayan API tabanlı araçlarla başladım. Django ve biraz HTML beni web'e çekti.",
+    "p2": "Son üç yıl fullstack geçti: Vue ve Laravel, Odoo ile birlikte, aynı anda iki iş. Son bir buçuk yıldır Vue ve Nuxt'a odaklandım; tek backend geliştiricisi olan küçük bir ekipte ürün çıkarıyorum.",
+    "p3": "PHP, JS veya TS'nin her köşesini bildiğimi iddia etmeyeceğim. Gerçek şeyler yapmak için neye ihtiyacım olduğunu biliyorum ve bu beni buraya kadar getirdi.",
+    "updated": "Güncelleme: 18 Kas 2026"
+  },
+
+  "style": {
+    "overline": "Tarz",
+    "title": "Nasıl Yazıyorum",
+    "body": "Varsayılan olarak tek başıma. Eşleşmelerde frontend veya backend'i ben alıyorum."
+  },
+
+  "rules": {
+    "overline": "Kurallar",
+    "p1": "Saf teknolojiyi, düz CSS'i, minimum bağımlılığı severim; tek bir kişi tarafından bilinçli olarak yazılmış gibi okunan kod. Her proje kendi loader'ını ve UI kit'ini alır. İkisi birbirine benzememeli.",
+    "p2": "Yapılı. Basit. Hak ettiği yerde dinamik."
+  },
+
+  "process": {
+    "overline": "Süreç",
+    "title": "Nasıl Çalışıyorum",
+    "body": "Her projede uyduğum sekiz ana kural. İstemezsen atlarız!",
+    "items": {
+      "style": {
+        "title": "Tarz",
+        "body": "Minimal ve güncel. Ağır bir şey yok, eski bir şey yok. Her proje kendi görünümünü alır, geri dönüştürülmüş bir şablon değil."
+      },
+      "motion": {
+        "title": "Hareket",
+        "body": "Ağırlığı olan hafif animasyon. Önemli anlar için GSAP, geri kalan her yerde düz CSS. Asla süs değil, her zaman sinyal."
+      },
+      "security": {
+        "title": "Güvenlik",
+        "body": "Şifreleme ve güvenlik bir özellik değil, varsayılandır. Aksini kanıtlayana kadar her girdiyi düşman olarak görürüm."
+      },
+      "structure": {
+        "title": "Yapı",
+        "body": "Temiz klasörler, temiz varlıklar. Yeni bir geliştirici 30 saniye içinde neyin nerede olduğunu bulamıyorsa, yapı başarısız olmuştur."
+      },
+      "versionControl": {
+        "title": "Sürüm Kontrolü",
+        "body": "İlk commit'ten itibaren Git. Küçük dallar, okunabilir geçmiş, paylaşılan dallara force-push yok. Asla."
+      },
+      "docs": {
+        "title": "Dokümanlar",
+        "body": "Gerekmedikçe isteğe bağlı. Kodu başkası okuyacaksa, nedenini açıklayan bir README alır."
+      },
+      "devops": {
+        "title": "DevOps",
+        "body": "Sürtünmeyi kaldıran küçük yardımcılar, deploy scriptleri, Makefile'lar, tek komutla kurulumlar. Yönetim sıkıcı olmalı."
+      },
+      "state": {
+        "title": "Durum",
+        "body": "Önemli olduğu yerde dinamik. Yükleme, hata, boş ve başarı durumları üzerinde çoğu uygulamanın zahmet ettiğinden fazla kontrol."
+      }
+    }
+  },
+
+  "projects": {
+    "title": "Yaptıklarım",
+    "body": "Gerçek projeler, demolardan değil. Çok uygulamalı platformlar, iç araçlar ve fullstack sistemler — bazıları açık, bazıları kapalı kapılar ardında. Hepsi çalışsın diye yapıldı, vitrin için değil.",
+    "asayroom": {
+      "title": "Terapi Platformu",
+      "mono": "Vue 3 + Nuxt 4",
+      "body": "Psikoloji, psikiyatri ve terapi hizmetleri için ulusal bir platform; farklı ihtiyaçları, programları ve tedavi tarzları olan çocuklara, gençlere, yetişkinlere ve çiftlere hizmet vermek için kuruldu. Çok dilli, yüz yüze ve çevrimiçi, ulusal ve uluslararası ölçekte.",
+      "f1": "Yoğun akış doğrulamaları, video ve görsel seviyesinde",
+      "f2": "En fazla 4 iç içe kategoriye sahip makale sistemi",
+      "f3": "Eğitim ve danışmanlık paketleri",
+      "f4": "Tam yönetim paneli, neredeyse her şey panelden kontrol edilir",
+      "f5": "Müşteriler için değerlendirmeler ve eşleştirme testleri",
+      "f6": "Uygulama içi cüzdanlar ve ödeme ağ geçitleri",
+      "f7": "Vaka geçmişi formlarıyla görüşme yönetimi",
+      "cta": "Asayroom'u Aç"
+    },
+    "nigc": {
+      "title": "İran Ulusal Gaz Şirketi",
+      "mono": "Vue 3, CRM + PWA + Gaziom",
+      "body": "İç operasyonlar için yapılmış üç ayrı Vue uygulaması: personel için bir CRM, saha kullanımı için bir PWA ve etkileşim için ödül tabanlı bir uygulama. Hepsi modern, hepsi çok temalı, her biri ortak bir şablon yerine kendi görsel kimliğine sahip.",
+      "f1": "Üç bağımsız uygulama: CRM, PWA, Gaziom",
+      "f2": "Üçünde de çok tema desteği",
+      "f3": "Uygulama başına özgün tasarım, ortak UI kit yok",
+      "f4": "İç kullanım için güvenlik odaklı yapı",
+      "f5": "Modern, güncel nesil arayüzler",
+      "f6": "Arayüz genelinde zengin animasyonlar",
+      "f7": "Görevler için gerçek zamanlı fotoğraf çekici",
+      "f8": "Kullanım için AI önerileri",
+      "f9": "Gaz tasarrufu etrafında kurulu, doğru kullanım",
+      "pwa": "PWA Uygulamasını Aç",
+      "crm": "CRM Uygulamasını Aç",
+      "gaziom": {
+        "title": "GAZIOM",
+        "body": "Ödül tabanlı PWA. Görevler, liderlik tablosu, minimal profil, video içerik."
+      }
+    },
+    "mahour": {
+      "title": "Toplantılar İçin Tasarlanmış Bir Kafe",
+      "mono": "Nuxt 3",
+      "body": "Sıradan bir kafe sitesi değil. Bu, müşterileriyle buluşmak için sessiz bir yer arayan, masa ayırtan, menüden sipariş veren ve işe koyulan danışmanlar ve brokerlar etrafında tasarlandı. Rezervasyon öncelikli bir ön yüzün arkasında tam restoran mantığı.",
+      "f1": "Kafe yöneticisi kendi ürünlerini tanımlar: çay, yemek, tam menü",
+      "f2": "Paketler ve birleşik ürünlerle masa rezervasyonları",
+      "f3": "Danışmanlar ve brokerlar müşterilerle buluşmak için yer ayırtır",
+      "f4": "Ana yönetici site kaynaklarını ve içeriğini kontrol eder",
+      "f5": "İki seviyeli yönetim: kafe sahibi ve platform sahibi",
+      "f6": "Tam restoran akışı, statik bir menü sayfası değil",
+      "cta": "Bu proje gizli"
+    },
+    "baam": {
+      "title": "Profesyonel Yeterlilik Sistemi",
+      "mono": "Nuxt 4",
+      "body": "Denetçiler, değerlendiriciler ve denetleyicilerin mesleki hazırlıklarını kanıtlamaları için bir platform. Kullanıcılar sıfırdan bir özgeçmiş oluşturur, istedikleri rolleri seçer ve sistem onlara o noktaya gelmek için tam olarak neyin eksik olduğunu söyler.",
+      "f1": "Yerleşik özgeçmiş oluşturucu: beceriler, bilgi, yetenekler, davranışlar",
+      "f2": "İş seçimi ve favoriler",
+      "f3": "Kariyer yolu başına otomatik boşluk analizi",
+      "f4": "Değerlendirmeler, kurslar, podcast'ler, makaleler önerir",
+      "f5": "Kullanıcılara hazır olmak için ne öğrenmeleri ve başarmaları gerektiğini söyler",
+      "f6": "Modern, minimal arayüz",
+      "cta": "Bu proje geliştirme aşamasında"
+    }
+  },
+
+  "touched": {
+    "title": "Dokunduğum Şeyler",
+    "body": "Bir beceri listesi değil. Sadece yolumun kesiştiği araçlar ve fikirler; bazıları derin, bazıları sadece ne olduğunu bilecek kadar.",
+    "items": {
+      "django": { "tag": "BACKEND", "note": "Gerçek uygulamalar yapacak kadar. Artık günlük sürücüm değil." },
+      "kivy": { "tag": "MOBILE", "note": "İkisiyle de birkaç Android uygulaması çıkardım. Flet daha hafif geldi." },
+      "web": { "tag": "WEB", "note": "Tarayıcıda rahatım. Bir proje hak ettiğinde TS." },
+      "bots": { "tag": "BOTS", "note": "Yıllar içinde düzinelerce bot. Bazıları hâlâ çalışıyor." },
+      "sql": { "tag": "DATA", "note": "Bir şemayı okuyup sorguyu yazabilirim. DBA değilim." },
+      "linux": { "tag": "SYSTEMS", "note": "chroot, systemd ve çirkin kısımlara kadar. Günlük işletim sistemi." },
+      "security": { "tag": "SECURITY", "note": "Ne olduklarını ve nasıl kaçınacağımı bilirim. Pentester değilim." },
+      "infra": { "tag": "INFRA", "note": "Sadece teori. Henüz üretimde çalıştırmadım." }
+    }
+  },
+
+  "ai": {
+    "title": "Yapay Zekâyı Nasıl Kullanıyorum",
+    "body": "Bir araç, takım arkadaşı değil. Sıkıcı kısımlar için kullanırım, kararları kendime ayırırım.",
+    "cards": {
+      "ideas": { "label": "FİKİRLER", "title": "Önce Konuşmak", "body": "Bir satır yazmadan önce fikirleri ona çarptırırım. Sadece neyin çıkacağını görmek için sohbet." },
+      "design": { "label": "TASARIM", "title": "Sıkıcı Stiller", "body": "Duyarlı kurallar, boşluk matematiği, tekrarlayan CSS. Zaten bildiğim kısımlar, sadece daha hızlı." },
+      "search": { "label": "ARAMA", "title": "Manuel Aramayı Değiştirmek", "body": "On sekme yerine bir kez sorarım. Dokümanlar, hata mesajları, unuttuğum küçük sözdizimi." },
+      "control": { "label": "KONTROL", "title": "Yönet, Takip Etme", "body": "Temeli ve yapıyı ben kurarım. AI benim kurallarıma uyar, tersi değil." }
+    },
+    "fallback": { "label": "YEDEK", "title": "İnceleyen Benim, O Değil", "body": "AI yanlış olduğunda veya kullanılamadığında yedek benim. Her çıktı yayına girmeden önce okunur." },
+    "experiments": {
+      "overline": "AI Deneyleri",
+      "title": "Vibe Coded",
+      "body": "AI'yı yönlendirerek yapılmış araçlar, yardımcı programlar ve açık kaynak deneyleri. Ağır soyutlamalar yok, sadece işlevsel yazılıma dönüştürülmüş ham fikirler.",
+      "kit": "Kit'i Aç",
+      "xnode": "XNODE (Android)"
+    },
+    "agentic": {
+      "overline": "Agentic AI Üzerine",
+      "body": "Bilmediğim bir teknoloji yığınında prototip yapmıyorsam, agent'lardan bana uygulama yapmalarını istemem. Bakımını yapmayı planladığım her şeyi kendim yazarım. Temel, yapı, kararlar — benim. AI takip eder."
+    }
+  },
+
+  "work": {
+    "title": "Nasıl Katkı Sağlayabilirim",
+    "body": "İşi üç şekilde alıyorum. Hangisi uyarsa.",
+    "now": {
+      "label": "ŞİMDİ",
+      "title": "Şu Anda Çalışıyorum",
+      "body": "Zaten fullstack çalışıyorum. İstikrarlı, odaklı ve elimdekini bırakmayı düşünmüyorum."
+    },
+    "extra": {
+      "title": "Ek İşe Açık",
+      "body": "Mevcut rolümün yanında ek şirketler alabilirim. Daha fazla saat, daha fazla çıktı, çakışma yok."
+    },
+    "freelance": {
+      "label": "SERBEST",
+      "title": "Serbest Projeler",
+      "body": "Küçük, sınırları net projeler. Frontend, backend veya ikisi. Net başlangıç, net bitiş."
+    }
+  },
+
+  "contact": {
+    "overline": "İLETİŞİM",
+    "note": "Bana ulaşmanın en iyi yolu. E-posta ve Telegram.",
+    "follow": "Daha önce neler yaptığımı görmek için GitHub'ıma göz atabilirsin ;)",
+    "github": "GitHub",
+    "telegram": "Telegram",
+    "email": "E-posta",
+    "instagram": "Instagram"
+  },
+
+  "footer": {
+    "tagline": "Kaydırdığın için teşekkürler. Yavaş inşa edildi, basit tutuldu.",
+    "note": "Tasarım mı? İşletim sistemimden — Nothing TECH.",
+    "copyright": "© {year}"
+  }
+}

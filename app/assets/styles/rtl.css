@@ -1,0 +1,70 @@
+/* Yekan Bakh — Persian/Arabic capable. Used ONLY for RTL locales (fa, ar),
+   because the Nothing dot-matrix face ships no Arabic-script glyphs. */
+@font-face {
+    font-family: 'Yekan Bakh';
+    src: url('~/assets/fonts/yekan-bakh/YekanBakhFaNum-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* @nuxtjs/i18n sets dir="rtl" on <html> for ar and fa, so this whole block is
+   inert for en/tr/ru — the dot font stays exactly as designed for LTR. */
+html[dir='rtl'] {
+    --font-rtl: 'Yekan Bakh', 'Inter', system-ui, sans-serif;
+    --font-display: 'Yekan Bakh', system-ui, sans-serif;
+    --font-body: 'Yekan Bakh', 'Inter', system-ui, sans-serif;
+    --font-dot: 'Yekan Bakh', monospace;
+    --font-mono: 'Yekan Bakh', ui-monospace, monospace;
+}
+
+/* Components that hardcode a Latin-only family instead of a token. Specificity
+   is bumped (.ntitle.ntitle-dot) so these win over the scoped component rules. */
+html[dir='rtl'] .brand-name,
+html[dir='rtl'] .brand-role,
+html[dir='rtl'] .ntitle.ntitle-dot,
+html[dir='rtl'] .dot-matrix,
+html[dir='rtl'] .dot-matrix-caps,
+html[dir='rtl'] .loading-dot-matrix__label {
+    font-family: 'Yekan Bakh', system-ui, sans-serif;
+}
+
+/* Arabic script is cursive: letter-spacing tears the joins apart and makes
+   words look broken. Kill all tracking (and word-spacing hacks) in RTL, and
+   drop the uppercase transforms that do nothing useful for these scripts. */
+html[dir='rtl'] body,
+html[dir='rtl'] body * {
+    letter-spacing: normal !important;
+    word-spacing: normal !important;
+    text-transform: none !important;
+}
+
+/* The desktop nav marks its active/hover state with a dot pinned to :after
+   using physical offsets; mirror it so it stays on the reading edge. */
+html[dir='rtl'] .nav-link::after {
+    left: auto;
+    right: 50%;
+    transform: translateX(50%) scale(0);
+}
+
+html[dir='rtl'] .nav-link:hover::after {
+    transform: translateX(50%) scale(1);
+}
+
+/* Small physical margins that should follow the writing direction. */
+html[dir='rtl'] .digged-item {
+    padding-left: 0;
+    padding-right: 16px;
+    border-left: none;
+    border-right: 1px solid var(--color-accent);
+}
+
+html[dir='rtl'] .project-features li {
+    padding-left: 0;
+    padding-right: 22px;
+}
+
+html[dir='rtl'] .project-features li::before {
+    left: auto;
+    right: 0;
+}
